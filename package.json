@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build-docs": "rm -rf docs && ng build --configuration production --output-path tmp-build --base-href / && mv tmp-build/browser docs && rm -rf tmp-build"
   },
   "prettier": {
     "printWidth": 100,

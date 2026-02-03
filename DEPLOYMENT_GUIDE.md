@@ -1,5 +1,5 @@
 # Build and Deploy
 
 ```bash
-ng build --configuration production --output-path docs --base-href /
+npm run build-docs
 ```
