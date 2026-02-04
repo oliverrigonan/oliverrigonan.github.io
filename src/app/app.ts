@@ -239,10 +239,9 @@ export class App {
   }
 
   downloadResume(): void {
-    // Create a dummy resume PDF download
     const link = document.createElement('a');
-    link.href = 'assets/resume.pdf';
-    link.download = 'Noah_Oliver_Rigonan_Resume.pdf';
+    link.href = '/docs/cv.pdf';
+    link.download = 'Noah_Oliver_Rigonan_CV.pdf';
     link.click();
   }
 
