@@ -96,11 +96,11 @@ export class App {
   experiences = [
     {
       company: 'Blockspace Corporation',
-      position: 'Senior Software Engineer | Director',
+      position: 'Senior Software Engineer / Co-Founder',
       period: 'Dec 2025 - Present',
       location: 'Mandaue, Central Visayas, Philippines · On-site',
       type: 'Full-time',
-      description: `Led a team of developers to maintain, enhance, and improve Xode Blockchain and Xterium projects. Ensured updates, features, and improvements were implemented efficiently while maintaining system stability and performance. Worked with team members to manage development tasks, resolve technical issues, and deliver high-quality solutions. Applied expertise in blockchain, AI, and Web3 technologies to improve the platforms' capabilities and user experience.`,
+      description: `Led a team of developers in maintaining, improving, and enhancing Xode Blockchain and Xterium projects. Planned and assigned development tasks, implemented system updates, and improved platform stability and performance. Performed code reviews to ensure quality, resolved technical issues, and guided team members in delivering client-ready solutions. Improved system workflows, optimized processes, and enhanced platform functionality to meet business requirements and user needs.`,
       current: true,
       logo: '/images/experiences/blockspace.png'
     },
@@ -110,7 +110,7 @@ export class App {
       period: 'Aug 2024 - Nov 2025 · 1 yr 4 mos',
       location: 'Mandaue, Central Visayas, Philippines · On-site',
       type: 'Full-time',
-      description: `Managed a team of developers to start the development of Xterium, a blockchain wallet platform. Oversaw project planning, task assignments, and development processes while maintaining Xode Blockchain. Worked with cross-functional teams to meet deadlines and deliver functional mobile, web, and browser applications. Ensured high-quality standards and smooth workflow between teams and projects.`,
+      description: `Managed a team of developers to initiate and develop Xterium, a blockchain wallet platform. Planned project tasks, monitored progress, and ensured timely delivery of functional mobile, web, and browser applications. Maintained and improved Xode Blockchain during the development of new projects. Collaborated with team members to implement features, fix issues, and maintain high-quality standards throughout the development lifecycle.`,
       current: false,
       logo: '/images/experiences/4nexgen.png'
     },
@@ -120,7 +120,7 @@ export class App {
       period: 'Sep 2023 - Jul 2024 · 11 mos',
       location: 'Mandaue, Central Visayas, Philippines · Hybrid',
       type: 'Full-time',
-      description: `Led the development of JINA, an AI-driven virtual assistant platform, delivering advanced chatbot and business automation solutions. Was part of the development team for the initial version of Xode Blockchain, contributing to secure and scalable Web3 implementations. Worked with other engineers to plan features, implement functionality, and optimize system performance for client-ready solutions.`,
+      description: `Led the development of JINA, an AI-driven virtual assistant platform, creating advanced chatbot solutions and business automation tools. Participated as a developer in the initial version of Xode Blockchain, implementing secure and scalable Web3 functionalities. Planned and implemented new features, optimized system performance, and tested software to ensure smooth operation for end users.`,
       current: false,
       logo: '/images/experiences/blockspace.png'
     },
@@ -130,7 +130,7 @@ export class App {
       period: 'Feb 2023 - Aug 2023 · 7 mos',
       location: 'Chiyoda, Tokyo, Japan · On-site',
       type: 'Full-time',
-      description: `Maintained, organized, and supported multiple projects including NIPT, dermatology reservation systems, and invoicing platforms. Worked with Japanese and Philippine teams, analyzed requirements, resolved technical and operational issues, and ensured smooth project delivery. Enhanced system workflows, performed debugging, and implemented improvements to optimize performance and usability.`,
+      description: `Maintained and supported multiple projects including NIPT, dermatology reservation systems, and invoicing platforms. Worked with Japanese and Philippine teams to gather requirements, resolve technical challenges, and implement system improvements. Developed enhancements to improve workflows, performed debugging, and ensured projects were delivered accurately and on time.`,
       current: false,
       logo: '/images/experiences/humedit.png'
     },
@@ -140,7 +140,7 @@ export class App {
       period: 'Jun 2021 - Jan 2023 · 1 yr 8 mos',
       location: 'Cebu, Central Visayas, Philippines',
       type: 'Full-time',
-      description: `Led the development of a dermatology reservation app ("Beauty System") for patients to book appointments, monitor treatments, and track billing and points. Designed and implemented an invoicing application for patient management and financial tracking. Managed development projects, ensured code quality, and delivered high-quality software solutions that improved operational efficiency and user satisfaction.`,
+      description: `Led the development of a dermatology reservation app ("Beauty System") for patients to book appointments, track treatments, manage billing, and monitor staff calendars. Designed and implemented an invoicing application for patient management and financial tracking. Assigned development tasks, ensured code quality, and delivered projects that improved operational efficiency, patient management, and user satisfaction.`,
       current: false,
       logo: '/images/experiences/hii.png'
     },
@@ -150,7 +150,7 @@ export class App {
       period: 'Jan 2019 - Jun 2021 · 2 yrs 6 mos',
       location: 'Cebu City, Philippines',
       type: 'Full-time',
-      description: `Developed Liteclerk Cloud Accounting System and Liteclerk POS, providing businesses with scalable and cloud-based accounting and point-of-sale solutions. Implemented features that improved operational efficiency, reporting, and financial management. Worked with team members to maintain system reliability, integrate new functionalities, and provide technical support for clients.`,
+      description: `Developed Liteclerk Cloud Accounting System and Liteclerk POS, delivering scalable cloud-based accounting and point-of-sale solutions for businesses. Implemented new features, improved reporting and financial management, and maintained system reliability. Worked with team members to integrate functionalities, resolve issues, and provide client support, enhancing overall system performance and usability.`,
       current: false,
       logo: '/images/experiences/liteclerk.png'
     },
@@ -160,7 +160,7 @@ export class App {
       period: 'Apr 2016 - Jan 2019 · 2 yrs 10 mos',
       location: 'Cebu City, Philippines',
       type: 'Full-time',
-      description: `Built and maintained the Innosoft website and CRM system to manage leads, deliveries, and client support. Developed features for logging sales activities, tracking client concerns, and monitoring account executive performance. Improved operational efficiency and client satisfaction through automated processes and streamlined workflows.`,
+      description: `Built and maintained the Innosoft website and CRM system to manage leads, deliveries, and client support. Developed features to log sales activities, track client concerns, and monitor account executive performance. Streamlined workflows and automated processes to improve efficiency and client satisfaction, ensuring reliable operations for the organization.`,
       current: false,
       logo: '/images/experiences/innosoft.png'
     }
