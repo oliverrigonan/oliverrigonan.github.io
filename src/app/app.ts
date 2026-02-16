@@ -136,7 +136,7 @@ export class App {
     },
     {
       company: 'Human Incubator Inc.',
-      position: 'Software Engineer Team Lead',
+      position: 'Software Engineering Team Lead',
       period: 'Jun 2021 - Jan 2023 · 1 yr 8 mos',
       location: 'Cebu, Central Visayas, Philippines',
       type: 'Full-time',
