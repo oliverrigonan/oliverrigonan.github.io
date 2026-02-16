@@ -30,7 +30,7 @@ export class App {
     {
       id: 'xterium-wallet',
       title: 'Xterium Wallet',
-      description: 'The official Web3 wallet for the Xode Blockchain. Securely manage your digital assets and explore the next generation of multi-network (Xode, Assethub) blockchain finance.',
+      description: 'A secure and versatile Web3 wallet for the Xode Blockchain, enabling users to manage digital assets across multiple networks (Xode, Assethub). Designed to deliver seamless blockchain finance experiences while prioritizing security and user-friendly interaction.',
       role: 'Lead Software Engineer',
       technologies: ['Ionic Framework', 'Angular', 'TypeScript', 'Polkadot', 'Android', 'iOS'],
       images: ['xterium-1.png', 'xterium-2.png', 'xterium-3.png']
@@ -38,7 +38,7 @@ export class App {
     {
       id: 'xode-blockchain',
       title: 'Xode Blockchain',
-      description: 'Xode is a blockchain platform with its own on-chain governance that aims to bring game development and businesses to Web3 and Polkadot. Enables developers to build web3 games and line-of-business (LOB) decentralized applications (dApps) using both Rust and Solidity.',
+      description: 'A comprehensive blockchain platform with built-in on-chain governance, empowering developers to create Web3 games and enterprise decentralized applications (dApps). Supports development using Rust and Solidity and integrates with Polkadot to bridge gaming and business operations into the blockchain ecosystem.',
       role: 'Software Engineer',
       technologies: ['Rust', 'Substrate', 'Polkadot'],
       images: ['xode-1.png', 'xode-2.png', 'xode-3.png']
@@ -46,7 +46,7 @@ export class App {
     {
       id: 'jina-chatbot',
       title: 'JINA Virtual/AI Assistant - Chatbot',
-      description: 'A virtual assistant platform that enhances customer engagement and streamlines business operations. Powered by MetaAI LLaMA models, it enables businesses to deploy specialized virtual assistants tailored to address specific operational challenges and customer needs.',
+      description: 'An AI-powered virtual assistant platform that enhances customer engagement and operational efficiency. Leveraging MetaAI LLaMA models, JINA enables businesses to deploy specialized virtual assistants tailored to handle specific operational tasks and address unique customer needs.',
       role: 'Lead Software Engineer',
       technologies: ['TypeScript', 'Python', 'FastAPI', 'MongoDB', 'Ollama'],
       images: ['jina-1.png', 'jina-2.png', 'jina-3.png']
@@ -54,7 +54,7 @@ export class App {
     {
       id: 'hiro-clinic',
       title: 'Hiro Clinic - Beauty System',
-      description: 'A comprehensive Web2-based platform from Japan, designed specifically for dermatology clinics. Streamlines clinic operations with reservation system, job order tracking, billing and collections management, patient management, and treatment planning.',
+      description: 'A complete Web2 platform tailored for dermatology clinics in Japan. Streamlines daily clinic operations with integrated features for appointment scheduling, job order tracking, billing, patient management, and treatment planning—enhancing efficiency and patient experience.',
       role: 'Software Engineer',
       technologies: ['TypeScript', 'Angular', 'Laravel', 'MySQL'],
       images: ['hiro-1.png', 'hiro-2.png', 'hiro-3.png']
@@ -62,7 +62,7 @@ export class App {
     {
       id: 'intellistream',
       title: 'IntelliStream',
-      description: 'A sophisticated cloud-based budgeting tool designed to efficiently track your streaming services, shows, and more. Accurately calculates the most cost-effective combination of streaming services.',
+      description: 'A cloud-based budgeting and management tool designed to track streaming subscriptions, shows, and services. IntelliStream analyzes your usage to recommend the most cost-effective combination of streaming services, helping users save money and optimize subscriptions.',
       role: 'Software Developer',
       technologies: ['TypeScript', 'Angular', 'Laravel', 'MySQL'],
       images: ['intellistream-1.png', 'intellistream-2.png']
@@ -70,7 +70,7 @@ export class App {
     {
       id: 'vaccine-tracker',
       title: 'Vaccine Tracker',
-      description: 'Identifies opportunities for you to get vaccinated once you or your family members become eligible, and sends notifications to your phone or email as opportunities arise.',
+      description: 'A proactive health management tool that monitors vaccination eligibility for you and your family. Sends timely notifications via phone or email when new opportunities arise, ensuring you stay up-to-date with required immunizations.',
       role: 'Software Developer',
       technologies: ['TypeScript', 'Angular', 'Laravel', 'MySQL'],
       images: ['vaccine-tracker-1.png', 'vaccine-tracker-2.png']
@@ -78,7 +78,7 @@ export class App {
     {
       id: 'liteclerk-fis',
       title: 'Liteclerk - Cloud Accounting Software',
-      description: 'LITECLERK Cloud Accounting System is a cloud-based SAAS Application designed for robust enterprise transactions that includes customer and sales management, payables, supply- chain management, warehousing, accounting and finance for trading business.',
+      description: 'A robust cloud-based SaaS accounting platform built for trading businesses. Offers comprehensive functionality including customer and sales management, payables, supply-chain tracking, inventory and warehouse management, accounting, and finance—all accessible securely via the cloud.',
       role: 'Software Developer',
       technologies: ['JavaScript', 'C#', 'ASP.NET', 'Microsoft SQL Server'],
       images: ['liteclerk-fis-1.png', 'liteclerk-fis-2.png']
@@ -86,7 +86,7 @@ export class App {
     {
       id: 'liteclerk-pos',
       title: 'Liteclerk POS',
-      description: 'Liteclerk POS was designed to be lite and simplified to make users easily adopt and understand the flow of operations yet powerful enough to gather vital information for making business decisions. By using POS, you can check your inventory in real-time and any given period. Sales and Collection Summaries can be generated instantly and accurately. With these reports, you will be able to control the operations of your business, minimize inventory pilferage, and monitor your cash.',
+      description: 'A lightweight yet powerful Point-of-Sale system that simplifies operational workflows for businesses. Provides real-time inventory tracking, instant sales and collection summaries, and detailed reports to control operations, minimize losses, and optimize cash flow management.',
       role: 'Software Developer',
       technologies: ['C#', '.NET Framework', 'Microsoft SQL Server'],
       images: ['liteclerk-pos-1.png', 'liteclerk-pos-2.png']
@@ -95,14 +95,14 @@ export class App {
 
   experiences = [
     {
-      company: 'Xode Blockchain',
-      position: 'Senior Software Engineer / Blockchain Developer',
-      period: 'Sep 2023 - Present · 2 yrs 5 mos',
+      company: 'Blockspace Corporation',
+      position: 'Senior Software Engineer | Director',
+      period: 'Dec 2025 - Present',
       location: 'Mandaue, Central Visayas, Philippines · On-site',
       type: 'Full-time',
-      description: 'Specializes in developing the Xode Blockchain by building Rust-based pallets with the Substrate Framework and implementing smart contracts using Ink!. Implements XCM protocols to enable seamless asset and message transfers between Xode, Polkadot, and AssetHub. Ensures secure, scalable, and efficient Web3 blockchain solutions through adherence to best practices and robust coding standards.',
+      description: `Led a team of developers to maintain, enhance, and improve Xode Blockchain and Xterium projects. Ensured updates, features, and improvements were implemented efficiently while maintaining system stability and performance. Worked with team members to manage development tasks, resolve technical issues, and deliver high-quality solutions. Applied expertise in blockchain, AI, and Web3 technologies to improve the platforms' capabilities and user experience.`,
       current: true,
-      logo: '/images/experiences/xode.png'
+      logo: '/images/experiences/blockspace.png'
     },
     {
       company: '4NEXGEN',
@@ -110,57 +110,47 @@ export class App {
       period: 'Aug 2024 - Nov 2025 · 1 yr 4 mos',
       location: 'Mandaue, Central Visayas, Philippines · On-site',
       type: 'Full-time',
-      description: 'Manages a team delivering secure and scalable Web3 Blockchain solutions across the Polkadot and Solana ecosystems, including the Xode Blockchain. Oversees development of Rust-based pallets using the Substrate Framework and coordinates Ink! smart contract implementation. Develops off-chain programs to bridge Solana and Xode, while leveraging XCM for interoperability. Leads the creation of the Xterium Wallet for mobile, web, and browser platforms.',
+      description: `Managed a team of developers to start the development of Xterium, a blockchain wallet platform. Oversaw project planning, task assignments, and development processes while maintaining Xode Blockchain. Worked with cross-functional teams to meet deadlines and deliver functional mobile, web, and browser applications. Ensured high-quality standards and smooth workflow between teams and projects.`,
       current: false,
       logo: '/images/experiences/4nexgen.png'
     },
     {
       company: 'Blockspace Corporation',
-      position: 'Senior Software Engineer Technical Lead',
+      position: 'Senior Software Engineer',
       period: 'Sep 2023 - Jul 2024 · 11 mos',
       location: 'Mandaue, Central Visayas, Philippines · Hybrid',
       type: 'Full-time',
-      description: 'Leads and specializes in building secure, scalable, and interoperable decentralized applications using Rust and the Substrate Framework for the Polkadot ecosystem. Oversees the design and development of robust blockchain architectures. Utilizes large language models like Meta Llama with Python to develop advanced chatbot solutions.',
+      description: `Led the development of JINA, an AI-driven virtual assistant platform, delivering advanced chatbot and business automation solutions. Was part of the development team for the initial version of Xode Blockchain, contributing to secure and scalable Web3 implementations. Worked with other engineers to plan features, implement functionality, and optimize system performance for client-ready solutions.`,
       current: false,
       logo: '/images/experiences/blockspace.png'
     },
     {
       company: 'HUMEDIT Co., Ltd',
-      position: 'Senior Software Engineer / IT Business System Analyst / Team Lead',
+      position: 'Software Engineer / IT Business Analyst',
       period: 'Feb 2023 - Aug 2023 · 7 mos',
       location: 'Chiyoda, Tokyo, Japan · On-site',
       type: 'Full-time',
-      description: 'Drives the integration of organizational requirements with technical solutions. Oversees multiple projects including Non-Invasive Prenatal Testing (NIPT), Dermatology Reservation Apps, and PCR Management Systems. Leads system development using Angular Framework, PHP Laravel, and MySQL Database.',
+      description: `Maintained, organized, and supported multiple projects including NIPT, dermatology reservation systems, and invoicing platforms. Worked with Japanese and Philippine teams, analyzed requirements, resolved technical and operational issues, and ensured smooth project delivery. Enhanced system workflows, performed debugging, and implemented improvements to optimize performance and usability.`,
       current: false,
       logo: '/images/experiences/humedit.png'
     },
     {
       company: 'Human Incubator Inc.',
-      position: 'Senior Software Engineer Team Lead',
-      period: 'Dec 2021 - Jan 2023 · 1 yr 2 mos',
+      position: 'Software Engineer Team Lead',
+      period: 'Jun 2021 - Jan 2023 · 1 yr 8 mos',
       location: 'Cebu, Central Visayas, Philippines',
       type: 'Full-time',
-      description: 'Leads development team maintaining and enhancing medical applications including NIPT, Dermatology Reservation App, and PCR Management System. Oversees use of Angular Framework, PHP Laravel, and Ionic Framework. Manages projects with Kanban methodology and Agile practices.',
+      description: `Led the development of a dermatology reservation app ("Beauty System") for patients to book appointments, monitor treatments, and track billing and points. Designed and implemented an invoicing application for patient management and financial tracking. Managed development projects, ensured code quality, and delivered high-quality software solutions that improved operational efficiency and user satisfaction.`,
       current: false,
       logo: '/images/experiences/hii.png'
     },
     {
-      company: 'Human Incubator Inc.',
+      company: 'Liteclerk Corporation',
       position: 'Software Engineer',
-      period: 'Jun 2021 - Dec 2021 · 7 mos',
-      location: 'Cebu, Central Visayas, Philippines',
-      type: 'Full-time',
-      description: 'Develops the Dermatology Reservation App and supports development of the PCR Management System. Utilizes Angular Framework, PHP Laravel, and MySQL Database to build reliable and high-quality software solutions.',
-      current: false,
-      logo: '/images/experiences/hii.png'
-    },
-    {
-      company: 'EASYFIS CORPORATION',
-      position: 'Software Developer',
       period: 'Jan 2019 - Jun 2021 · 2 yrs 6 mos',
-      location: 'Philippines',
+      location: 'Cebu City, Philippines',
       type: 'Full-time',
-      description: 'Develops and maintains dynamic software applications using Angular Framework, ASP.NET (.NET Core, Web API Services), WinForms, and Microsoft SQL Database. Leads development of diverse systems from point-of-sale (POS) to cloud-based accounting and payroll systems.',
+      description: `Developed Liteclerk Cloud Accounting System and Liteclerk POS, providing businesses with scalable and cloud-based accounting and point-of-sale solutions. Implemented features that improved operational efficiency, reporting, and financial management. Worked with team members to maintain system reliability, integrate new functionalities, and provide technical support for clients.`,
       current: false,
       logo: '/images/experiences/liteclerk.png'
     },
@@ -170,7 +160,7 @@ export class App {
       period: 'Apr 2016 - Jan 2019 · 2 yrs 10 mos',
       location: 'Cebu City, Philippines',
       type: 'Full-time',
-      description: 'Specializes in developing advanced cloud-based applications with Java Spring Framework and Oracle Database. Delivers projects in CRM, cloud-based accounting systems, and application integration. Proficient in ASP.NET Framework, MVC, WebAPI Services, and Microsoft SQL Server.',
+      description: `Built and maintained the Innosoft website and CRM system to manage leads, deliveries, and client support. Developed features for logging sales activities, tracking client concerns, and monitoring account executive performance. Improved operational efficiency and client satisfaction through automated processes and streamlined workflows.`,
       current: false,
       logo: '/images/experiences/innosoft.png'
     }
