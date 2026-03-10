@@ -33,7 +33,7 @@ export class App {
       title: 'Upwisy - AI Learning Platform',
       description: 'AI-powered platform built to streamline the creation and delivery of online learning experiences. Upwisy enables educators to easily create, manage, and deliver engaging courses with the help of AI-driven content generation, personalized learning paths, and interactive features that enhance student engagement and learning outcomes.',
       role: 'Lead Software Engineer',
-      technologies: ['Angular', 'TypeScript', 'NestJS', 'Polkadot', 'Rust', 'Substrate', 'Docker'],
+      technologies: ['Angular', 'TypeScript', 'NestJS', 'OpenAI', 'MongoDB', 'Docker'],
       images: ['upwisy-1.png', 'upwisy-2.png', 'upwisy-3.png', 'upwisy-4.png', 'upwisy-5.png'],
       category: 'AI'
     },
@@ -42,7 +42,7 @@ export class App {
       title: 'Miming CAT (Cross Access Token)',
       description: 'A cross-chain token bridge solution that enables seamless transfer of digital assets across multiple blockchain networks. Miming CAT provides a secure and efficient way to move tokens between different chains, enhancing interoperability and expanding the possibilities for decentralized applications (dApps) and users in the blockchain ecosystem.',
       role: 'Lead Software Engineer',
-      technologies: ['Angular', 'TypeScript', 'NestJS', 'Polkadot', 'Rust', 'Substrate', 'Docker'],
+      technologies: ['Angular', 'TypeScript', 'NestJS', 'Polkadot', 'Rust', 'Substrate', 'MongoDB', 'Docker'],
       images: ['miming-1.png', 'miming-2.png', 'miming-3.png', 'miming-4.png', 'miming-5.png'],
       category: 'Web3'
     },
@@ -69,7 +69,7 @@ export class App {
       title: 'JINA Virtual/AI Assistant - Chatbot',
       description: 'An AI-powered virtual assistant platform that enhances customer engagement and operational efficiency. Leveraging MetaAI LLaMA models, JINA enables businesses to deploy specialized virtual assistants tailored to handle specific operational tasks and address unique customer needs.',
       role: 'Lead Software Engineer',
-      technologies: ['TypeScript', 'Python', 'FastAPI', 'MongoDB', 'Ollama'],
+      technologies: ['TypeScript', 'Python', 'FastAPI', 'MongoDB', 'Ollama', 'Docker'],
       images: ['jina-1.png', 'jina-2.png', 'jina-3.png', 'jina-4.png'],
       category: 'AI'
     },
@@ -318,6 +318,7 @@ export class App {
       '.NET Framework': '<img src="/images/techstacks/dotnet.png" />',
       'C#': '<img src="/images/techstacks/csharp.png" />',
       'Microsoft SQL Server': '<img src="/images/techstacks/mssql.png" />',
+      'OpenAI': '<img src="/images/techstacks/openai.png" />',
     };
     return iconMap[tech] || '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18.5c-4 0-7.5-3.5-7.5-7.5S8 5.5 12 5.5s7.5 3.5 7.5 7.5-3.5 7.5-7.5 7.5z"/></svg>';
   }
