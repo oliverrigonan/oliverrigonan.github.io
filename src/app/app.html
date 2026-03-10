@@ -265,9 +265,50 @@
       </div>
     </div>
 
+    <!-- Category Filters -->
+    <div class="mb-12">
+      <!-- Desktop Filter (Horizontal Tabs) -->
+      <div class="hidden sm:flex flex-wrap items-center justify-center gap-3 mb-8">
+        @for (category of categories(); track category) {
+        <button (click)="selectCategory(category)"
+          [class]="selectedCategory() === category
+            ? 'px-6 py-3 bg-linear-to-r from-blue-500 to-violet-600 text-white font-bold rounded-3xl shadow-lg shadow-blue-500/50 transition-all duration-300 scale-105 border border-blue-400'
+            : 'px-6 py-3 bg-black/40 backdrop-blur-sm text-slate-300 font-semibold rounded-3xl border border-slate-700 hover:border-blue-500/50 hover:text-cyan-400 hover:bg-black/60 transition-all duration-300 hover:scale-105 cursor-pointer'"
+          class="cursor-pointer">
+          {{ category }}
+          <span [class]="selectedCategory() === category ? 'text-cyan-100' : 'text-slate-500'"
+            class="ml-2 text-sm font-bold">
+            ({{ getCategoryCount(category) }})
+          </span>
+        </button>
+        }
+      </div>
+
+      <!-- Mobile Filter (Dropdown-style) -->
+      <div class="sm:hidden space-y-2">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-cyan-400 font-bold text-sm">Filter by Category:</span>
+          <span class="text-slate-400 text-sm">{{ filteredProjects().length }} project{{ filteredProjects().length !== 1 ? 's' : '' }}</span>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          @for (category of categories(); track category) {
+          <button (click)="selectCategory(category)"
+            [class]="selectedCategory() === category
+              ? 'px-4 py-2.5 bg-linear-to-r from-blue-500 to-violet-600 text-white font-bold rounded-2xl shadow-lg shadow-blue-500/50 border border-blue-400 text-sm'
+              : 'px-4 py-2.5 bg-black/40 backdrop-blur-sm text-slate-300 font-semibold rounded-2xl border border-slate-700 hover:border-blue-500/50 transition-all duration-300 text-sm cursor-pointer'">
+            {{ category }}
+            <span class="ml-1 text-xs opacity-75">
+              ({{ getCategoryCount(category) }})
+            </span>
+          </button>
+          }
+        </div>
+      </div>
+    </div>
+
     <!-- Projects Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      @for (project of projects; track project.id; let idx = $index) {
+      @for (project of filteredProjects(); track project.id; let idx = $index) {
       <div
         class="group bg-linear-to-br from-black to-gray-950 rounded-3xl overflow-hidden shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 border border-slate-700 hover:border-blue-500/50 hover:-translate-y-2">
         <!-- Image Slideshow -->
@@ -287,6 +328,12 @@
           <div
             class="absolute top-4 left-4 w-12 h-12 bg-linear-to-br from-blue-500 to-violet-600 rounded-3xl flex items-center justify-center shadow-lg z-10">
             <span class="text-white font-black text-lg">{{ idx + 1 }}</span>
+          </div>
+
+          <!-- Category badge -->
+          <div
+            class="absolute top-4 right-4 px-4 py-2 bg-black/80 backdrop-blur-sm border border-cyan-400/50 rounded-full shadow-lg z-10">
+            <span class="text-cyan-400 text-xs font-bold tracking-wide">{{ project.category }}</span>
           </div>
 
           <!-- Navigation buttons -->

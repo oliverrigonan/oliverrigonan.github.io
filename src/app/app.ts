@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal, HostListener } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, computed, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -17,6 +17,7 @@ export class App {
   mobileMenuOpen = signal(false);
   currentSlideIndex = signal<Record<string, number>>({});
   isScrolled = signal(false);
+  selectedCategory = signal<string>('All');
 
   navItems = [
     { label: 'Home', href: '#home' },
@@ -28,12 +29,31 @@ export class App {
 
   projects = [
     {
+      id: 'upwisy',
+      title: 'Upwisy - AI Learning Platform',
+      description: 'AI-powered platform built to streamline the creation and delivery of online learning experiences. Upwisy enables educators to easily create, manage, and deliver engaging courses with the help of AI-driven content generation, personalized learning paths, and interactive features that enhance student engagement and learning outcomes.',
+      role: 'Lead Software Engineer',
+      technologies: ['Angular', 'TypeScript', 'NestJS', 'Polkadot', 'Rust', 'Substrate', 'Docker'],
+      images: ['upwisy-1.png', 'upwisy-2.png', 'upwisy-3.png', 'upwisy-4.png', 'upwisy-5.png'],
+      category: 'AI'
+    },
+    {
+      id: 'miming',
+      title: 'Miming CAT (Cross Access Token)',
+      description: 'A cross-chain token bridge solution that enables seamless transfer of digital assets across multiple blockchain networks. Miming CAT provides a secure and efficient way to move tokens between different chains, enhancing interoperability and expanding the possibilities for decentralized applications (dApps) and users in the blockchain ecosystem.',
+      role: 'Lead Software Engineer',
+      technologies: ['Angular', 'TypeScript', 'NestJS', 'Polkadot', 'Rust', 'Substrate', 'Docker'],
+      images: ['miming-1.png', 'miming-2.png', 'miming-3.png', 'miming-4.png', 'miming-5.png'],
+      category: 'Web3'
+    },
+    {
       id: 'xterium-wallet',
       title: 'Xterium Wallet',
       description: 'A secure and versatile Web3 wallet for the Xode Blockchain, enabling users to manage digital assets across multiple networks (Xode, Assethub). Designed to deliver seamless blockchain finance experiences while prioritizing security and user-friendly interaction.',
       role: 'Lead Software Engineer',
       technologies: ['Ionic Framework', 'Angular', 'TypeScript', 'Polkadot', 'Android', 'iOS'],
-      images: ['xterium-1.png', 'xterium-2.png', 'xterium-3.png']
+      images: ['xterium-1.png', 'xterium-2.png', 'xterium-3.png'],
+      category: 'Mobile App'
     },
     {
       id: 'xode-blockchain',
@@ -41,7 +61,8 @@ export class App {
       description: 'A comprehensive blockchain platform with built-in on-chain governance, empowering developers to create Web3 games and enterprise decentralized applications (dApps). Supports development using Rust and Solidity and integrates with Polkadot to bridge gaming and business operations into the blockchain ecosystem.',
       role: 'Software Engineer',
       technologies: ['Rust', 'Substrate', 'Polkadot'],
-      images: ['xode-1.png', 'xode-2.png', 'xode-3.png']
+      images: ['xode-1.png', 'xode-2.png', 'xode-3.png'],
+      category: 'Web3'
     },
     {
       id: 'jina-chatbot',
@@ -49,7 +70,8 @@ export class App {
       description: 'An AI-powered virtual assistant platform that enhances customer engagement and operational efficiency. Leveraging MetaAI LLaMA models, JINA enables businesses to deploy specialized virtual assistants tailored to handle specific operational tasks and address unique customer needs.',
       role: 'Lead Software Engineer',
       technologies: ['TypeScript', 'Python', 'FastAPI', 'MongoDB', 'Ollama'],
-      images: ['jina-1.png', 'jina-2.png', 'jina-3.png']
+      images: ['jina-1.png', 'jina-2.png', 'jina-3.png', 'jina-4.png'],
+      category: 'AI'
     },
     {
       id: 'hiro-clinic',
@@ -57,7 +79,8 @@ export class App {
       description: 'A complete Web2 platform tailored for dermatology clinics in Japan. Streamlines daily clinic operations with integrated features for appointment scheduling, job order tracking, billing, patient management, and treatment planning—enhancing efficiency and patient experience.',
       role: 'Software Engineer',
       technologies: ['TypeScript', 'Angular', 'Laravel', 'MySQL'],
-      images: ['hiro-1.png', 'hiro-2.png', 'hiro-3.png']
+      images: ['hiro-1.png', 'hiro-2.png', 'hiro-3.png'],
+      category: 'Web2'
     },
     {
       id: 'intellistream',
@@ -65,7 +88,8 @@ export class App {
       description: 'A cloud-based budgeting and management tool designed to track streaming subscriptions, shows, and services. IntelliStream analyzes your usage to recommend the most cost-effective combination of streaming services, helping users save money and optimize subscriptions.',
       role: 'Software Developer',
       technologies: ['TypeScript', 'Angular', 'Laravel', 'MySQL'],
-      images: ['intellistream-1.png', 'intellistream-2.png']
+      images: ['intellistream-1.png', 'intellistream-2.png'],
+      category: 'Web2'
     },
     {
       id: 'vaccine-tracker',
@@ -73,7 +97,8 @@ export class App {
       description: 'A proactive health management tool that monitors vaccination eligibility for you and your family. Sends timely notifications via phone or email when new opportunities arise, ensuring you stay up-to-date with required immunizations.',
       role: 'Software Developer',
       technologies: ['TypeScript', 'Angular', 'Laravel', 'MySQL'],
-      images: ['vaccine-tracker-1.png', 'vaccine-tracker-2.png']
+      images: ['vaccine-tracker-1.png', 'vaccine-tracker-2.png'],
+      category: 'Web2'
     },
     {
       id: 'liteclerk-fis',
@@ -81,7 +106,8 @@ export class App {
       description: 'A robust cloud-based SaaS accounting platform built for trading businesses. Offers comprehensive functionality including customer and sales management, payables, supply-chain tracking, inventory and warehouse management, accounting, and finance—all accessible securely via the cloud.',
       role: 'Software Developer',
       technologies: ['JavaScript', 'C#', 'ASP.NET', 'Microsoft SQL Server'],
-      images: ['liteclerk-fis-1.png', 'liteclerk-fis-2.png']
+      images: ['liteclerk-fis-1.png', 'liteclerk-fis-2.png'],
+      category: 'Web2'
     },
     {
       id: 'liteclerk-pos',
@@ -89,9 +115,31 @@ export class App {
       description: 'A lightweight yet powerful Point-of-Sale system that simplifies operational workflows for businesses. Provides real-time inventory tracking, instant sales and collection summaries, and detailed reports to control operations, minimize losses, and optimize cash flow management.',
       role: 'Software Developer',
       technologies: ['C#', '.NET Framework', 'Microsoft SQL Server'],
-      images: ['liteclerk-pos-1.png', 'liteclerk-pos-2.png']
+      images: ['liteclerk-pos-1.png', 'liteclerk-pos-2.png'],
+      category: 'Desktop App'
     },
   ];
+
+  // Computed signal to get unique categories with custom sort order
+  categories = computed(() => {
+    const categoryOrder = ['AI', 'Web3', 'Mobile App', 'Web2', 'Desktop App'];
+    const uniqueCategories = [...new Set(this.projects.map(p => p.category))];
+    const sortedCategories = uniqueCategories.sort((a, b) => {
+      const indexA = categoryOrder.indexOf(a);
+      const indexB = categoryOrder.indexOf(b);
+      return indexA - indexB;
+    });
+    return ['All', ...sortedCategories];
+  });
+
+  // Computed signal to filter projects by selected category
+  filteredProjects = computed(() => {
+    const category = this.selectedCategory();
+    if (category === 'All') {
+      return this.projects;
+    }
+    return this.projects.filter(p => p.category === category);
+  });
 
   experiences = [
     {
@@ -191,6 +239,17 @@ export class App {
 
   closeMobileMenu(): void {
     this.mobileMenuOpen.set(false);
+  }
+
+  selectCategory(category: string): void {
+    this.selectedCategory.set(category);
+  }
+
+  getCategoryCount(category: string): number {
+    if (category === 'All') {
+      return this.projects.length;
+    }
+    return this.projects.filter(p => p.category === category).length;
   }
 
   scrollToSection(event: Event, sectionId: string): void {
