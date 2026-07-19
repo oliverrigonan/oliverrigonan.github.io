@@ -25,9 +25,9 @@
         </a>
         }
         <!-- Download Resume Button -->
-        <button (click)="downloadResume()"
+        <button (click)="openResume()"
           class="px-6 py-2 bg-linear-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white font-semibold rounded-3xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 cursor-pointer">
-          Download CV
+          View Resume
         </button>
       </div>
 
@@ -56,9 +56,9 @@
       </a>
       }
       <!-- Mobile Download Resume Button -->
-      <button (click)="downloadResume()"
+      <button (click)="openResume()"
         class="w-full mt-2 px-4 py-2 bg-linear-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white font-semibold rounded-3xl shadow-lg shadow-blue-500/30 transition-all duration-300 cursor-pointer">
-        Download CV
+        View Resume
       </button>
     </div>
   </div>
@@ -132,7 +132,7 @@
         <h2 class="text-lg sm:text-xl lg:text-2xl text-slate-200 mb-6 font-bold animate-fade-in"
           style="animation-delay: 0.4s;">
           <span class="inline-block relative">
-            Software Engineer
+            Senior Software Engineer
             <span
               class="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-cyan-400 to-purple-500 transform scale-x-100 transition-transform"></span>
           </span>
@@ -141,11 +141,11 @@
         <!-- Tagline with enhanced styling -->
         <p class="text-base lg:text-lg text-slate-300 mb-6 leading-relaxed animate-fade-in"
           style="animation-delay: 0.6s;">
-          Specializing in <span class="text-cyan-400 font-bold px-2 py-1 bg-blue-500/10 rounded">Full Stack
-            Development</span>,
-          <span class="text-violet-400 font-bold px-2 py-1 bg-purple-500/10 rounded">Agentic AI Systems</span>, and
-          <span class="text-pink-400 font-bold px-2 py-1 bg-pink-500/10 rounded">Web3 Solutions</span>,
-          building scalable applications, AI-driven platforms, and secure, high-performance systems.
+          I create
+          <span class="text-cyan-400 font-bold px-2 py-1 bg-blue-500/10 rounded">modern web and mobile apps</span>,
+          <span class="text-violet-400 font-bold px-2 py-1 bg-purple-500/10 rounded">AI-powered products</span>, and
+          <span class="text-pink-400 font-bold px-2 py-1 bg-pink-500/10 rounded">blockchain solutions</span>
+          that drive business growth and deliver great user experiences.
         </p>
 
         <!-- CTA Buttons -->
@@ -288,38 +288,45 @@
         <div class="relative h-72 bg-linear-to-br from-gray-950 to-slate-700 overflow-hidden">
           @for (image of project.images; track image; let i = $index) {
           @if (getCurrentSlideIndex(project.id) === i) {
-          <!-- Using Unsplash dummy images -->
           <img [src]="'/images/projects/' + image" [alt]="project.title + ' screenshot ' + (i + 1)"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-          <!-- Overlay linear -->
           <div class="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent opacity-60">
           </div>
           }
           }
 
+          <!-- Hover View overlay -->
+          <div
+            class="absolute inset-0 z-20 flex items-center justify-center bg-black/55 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+            <button type="button" (click)="openGallery(project, $event)"
+              class="px-6 py-2.5 rounded-full bg-linear-to-r from-blue-500 to-violet-600 text-white text-sm font-bold shadow-lg shadow-blue-500/40 hover:scale-110 transition-transform cursor-pointer">
+              View
+            </button>
+          </div>
+
           <!-- Project number badge -->
           <div
-            class="absolute top-4 left-4 w-12 h-12 bg-linear-to-br from-blue-500 to-violet-600 rounded-3xl flex items-center justify-center shadow-lg z-10">
+            class="absolute top-4 left-4 w-12 h-12 bg-linear-to-br from-blue-500 to-violet-600 rounded-3xl flex items-center justify-center shadow-lg z-30 pointer-events-none">
             <span class="text-white font-black text-lg">{{ idx + 1 }}</span>
           </div>
 
           <!-- Category badge -->
           <div
-            class="absolute top-4 right-4 px-4 py-2 bg-black/80 backdrop-blur-sm border border-cyan-400/50 rounded-full shadow-lg z-10">
+            class="absolute top-4 right-4 px-4 py-2 bg-black/80 backdrop-blur-sm border border-cyan-400/50 rounded-full shadow-lg z-30 pointer-events-none">
             <span class="text-cyan-400 text-xs font-bold tracking-wide">{{ project.category }}</span>
           </div>
 
           <!-- Navigation buttons -->
           @if (project.images.length > 1) {
-          <button (click)="previousSlide(project.id, project.images.length)"
-            class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/90 hover:bg-blue-500 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg hover:scale-110 z-10 cursor-pointer"
+          <button (click)="$event.stopPropagation(); previousSlide(project.id, project.images.length)"
+            class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/90 hover:bg-blue-500 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg hover:scale-110 z-30 cursor-pointer"
             aria-label="Previous image">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
           </button>
-          <button (click)="nextSlide(project.id, project.images.length)"
-            class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/90 hover:bg-blue-500 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg hover:scale-110 z-10 cursor-pointer"
+          <button (click)="$event.stopPropagation(); nextSlide(project.id, project.images.length)"
+            class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/90 hover:bg-blue-500 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg hover:scale-110 z-30 cursor-pointer"
             aria-label="Next image">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -329,9 +336,9 @@
 
           <!-- Slide indicators -->
           @if (project.images.length > 1) {
-          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-30">
             @for (image of project.images; track image; let i = $index) {
-            <button (click)="setSlideIndex(project.id, i)"
+            <button (click)="$event.stopPropagation(); setSlideIndex(project.id, i)"
               [class]="getCurrentSlideIndex(project.id) === i ? 'bg-cyan-400 w-8' : 'bg-slate-500/70 w-2 hover:bg-slate-400'"
               class="h-2 rounded-full transition-all duration-300 cursor-pointer"
               [attr.aria-label]="'Go to slide ' + (i + 1)"></button>
@@ -370,11 +377,11 @@
             }
           </div>
 
-          <p class="text-slate-300 mb-6 leading-relaxed">{{ project.description }}</p>
+          <p class="text-slate-300 mb-6 leading-relaxed">{{ project.summary }}</p>
 
           <!-- Technologies -->
           <div class="flex flex-wrap gap-2">
-            @for (tech of project.technologies; track tech) {
+            @for (tech of getCardTechnologies(project.technologies); track tech) {
             <span
               class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-700 text-slate-200 text-xs font-semibold hover:border-cyan-500/50 hover:text-cyan-300 transition-all">
               <span class="w-4 h-4 shrink-0 flex items-center justify-center [&>img]:w-full [&>img]:h-full [&>img]:object-contain"
@@ -384,6 +391,12 @@
               {{ tech }}
             </span>
             }
+            @if (getHiddenTechCount(project.technologies) > 0) {
+            <span
+              class="inline-flex items-center px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-700 text-slate-400 text-xs font-semibold">
+              +{{ getHiddenTechCount(project.technologies) }} more
+            </span>
+            }
           </div>
         </div>
       </div>
@@ -391,6 +404,174 @@
     </div>
   </div>
 </section>
+
+<!-- Project Gallery Modal -->
+@if (galleryProject(); as project) {
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 animate-modal-backdrop" role="dialog"
+  aria-modal="true" [attr.aria-label]="project.title + ' details'">
+  <div class="absolute inset-0 bg-black/80 backdrop-blur-md" (click)="closeGallery()"></div>
+
+  <div
+    class="relative z-10 w-full max-w-6xl max-h-[90vh] overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-700 bg-linear-to-br from-slate-950 to-black shadow-2xl shadow-cyan-500/15 animate-modal-panel">
+    <div class="grid grid-cols-1 lg:grid-cols-5 max-h-[90vh]">
+      <!-- Left: Images -->
+      <div class="lg:col-span-3 relative bg-black flex flex-col min-h-64">
+        <div class="relative flex-1 flex items-center justify-center overflow-hidden min-h-64 lg:min-h-[420px]">
+          <img [src]="'/images/projects/' + project.images[galleryIndex()]"
+            [alt]="project.title + ' screenshot ' + (galleryIndex() + 1)"
+            class="max-h-[50vh] lg:max-h-[70vh] w-full object-contain animate-modal-image" />
+
+          @if (project.images.length > 1) {
+          <button type="button" (click)="previousGalleryImage()"
+            class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/80 border border-slate-700 text-white hover:bg-blue-500 hover:border-blue-400 transition-all cursor-pointer flex items-center justify-center"
+            aria-label="Previous image">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button type="button" (click)="nextGalleryImage()"
+            class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/80 border border-slate-700 text-white hover:bg-blue-500 hover:border-blue-400 transition-all cursor-pointer flex items-center justify-center"
+            aria-label="Next image">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+          }
+        </div>
+
+        @if (project.images.length > 1) {
+        <div class="px-4 py-3 border-t border-slate-800 overflow-x-auto">
+          <div class="flex gap-2 min-w-min">
+            @for (image of project.images; track image; let i = $index) {
+            <button type="button" (click)="setGalleryIndex(i)"
+              class="relative shrink-0 w-16 h-12 sm:w-20 sm:h-14 rounded-lg overflow-hidden border transition-all cursor-pointer"
+              [class]="galleryIndex() === i ? 'border-cyan-400 ring-2 ring-cyan-400/30 scale-105' : 'border-slate-700 opacity-70 hover:opacity-100'">
+              <img [src]="'/images/projects/' + image" [alt]="'Thumbnail ' + (i + 1)"
+                class="w-full h-full object-cover" />
+            </button>
+            }
+          </div>
+        </div>
+        }
+      </div>
+
+      <!-- Right: Details -->
+      <div class="lg:col-span-2 border-t lg:border-t-0 lg:border-l border-slate-800 p-5 sm:p-7 overflow-y-auto animate-modal-aside">
+        <div class="flex items-start justify-between gap-3 mb-4">
+          <div class="min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <span
+                class="px-2.5 py-1 bg-cyan-500/10 border border-cyan-400/40 text-cyan-300 text-[10px] font-bold rounded-full uppercase tracking-wide">
+                {{ project.category }}
+              </span>
+              @if (project.engagement === 'Gig') {
+              <span
+                class="px-2.5 py-1 bg-amber-500/15 border border-amber-400/40 text-amber-300 text-[10px] font-bold rounded-full uppercase tracking-wide">
+                Independent Gig
+              </span>
+              }
+            </div>
+            <h3 class="text-xl sm:text-2xl font-black text-white leading-tight">{{ project.title }}</h3>
+          </div>
+          <button type="button" (click)="closeGallery()"
+            class="shrink-0 w-10 h-10 rounded-full bg-slate-900 border border-slate-700 text-slate-300 hover:text-white hover:border-cyan-400/50 hover:bg-slate-800 transition-all cursor-pointer flex items-center justify-center"
+            aria-label="Close gallery">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 text-sm mb-5">
+          <span class="text-cyan-400 font-bold">{{ project.role }}</span>
+          @if (project.company) {
+          <span class="text-slate-600">·</span>
+          <span class="text-slate-400 font-semibold">{{ project.company }}</span>
+          }
+        </div>
+
+        <p class="text-slate-300 leading-relaxed text-sm sm:text-base mb-6">{{ project.description }}</p>
+
+        @if (project.links?.length) {
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Links</p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          @for (link of project.links; track link.url) {
+          <a [href]="link.url" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/40 text-cyan-300 text-xs font-semibold hover:bg-cyan-500/20 hover:border-cyan-300 transition-all">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+            {{ link.label }}
+          </a>
+          }
+        </div>
+        }
+
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Technologies</p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          @for (tech of project.technologies; track tech) {
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-700 text-slate-200 text-xs font-semibold">
+            <span
+              class="w-4 h-4 shrink-0 flex items-center justify-center [&>img]:w-full [&>img]:h-full [&>img]:object-contain"
+              [class.invert]="isDarkTechIcon(tech)"
+              [class.brightness-0]="isDarkTechIcon(tech)"
+              [innerHTML]="getTechIcon(tech)"></span>
+            {{ tech }}
+          </span>
+          }
+        </div>
+
+        <p class="text-xs text-slate-500">
+          Image {{ galleryIndex() + 1 }} of {{ project.images.length }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+}
+
+<!-- Resume Modal -->
+@if (resumeOpen()) {
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-2 sm:p-4 animate-modal-backdrop" role="dialog"
+  aria-modal="true" aria-label="Resume preview">
+  <div class="absolute inset-0 bg-black/80 backdrop-blur-md" (click)="closeResume()"></div>
+
+  <div
+    class="relative z-10 w-full max-w-7xl max-h-[96vh] overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-700 bg-linear-to-br from-slate-950 to-black shadow-2xl shadow-cyan-500/15 animate-modal-panel flex flex-col">
+    <div class="flex items-center justify-between gap-3 px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-800">
+      <div class="min-w-0">
+        <h3 class="text-lg sm:text-xl font-black text-white">Resume</h3>
+        <p class="text-sm text-slate-400 mt-0.5 truncate">Noah Oliver Rigonan · Senior Software Engineer</p>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button type="button" (click)="downloadResume()"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-blue-500 to-violet-600 text-white text-sm font-bold hover:from-blue-600 hover:to-violet-700 transition-all cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+            </path>
+          </svg>
+          Download PDF
+        </button>
+        <button type="button" (click)="closeResume()"
+          class="w-10 h-10 rounded-full bg-slate-900 border border-slate-700 text-slate-300 hover:text-white hover:border-cyan-400/50 hover:bg-slate-800 transition-all cursor-pointer flex items-center justify-center"
+          aria-label="Close resume">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex-1 min-h-0 bg-slate-900/50 p-2 sm:p-3">
+      <iframe src="/docs/cv.pdf#view=FitH" title="Noah Oliver Rigonan Resume"
+        class="w-full h-[78vh] sm:h-[82vh] rounded-xl border border-slate-800 bg-white"></iframe>
+    </div>
+  </div>
+</div>
+}
 
 <!-- Experience Section -->
 <section id="experience" class="relative min-h-screen bg-black py-20 overflow-hidden">
@@ -490,11 +671,6 @@
                 <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
                 Current Position
               </span>
-              } @else if (exp.type === 'Gig') {
-              <span
-                class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/15 border border-amber-400/40 text-amber-300 text-sm font-bold rounded-full">
-                Independent Gig
-              </span>
               }
             </div>
 
@@ -523,6 +699,99 @@
           <!-- Corner accent -->
           <div
             class="absolute top-0 right-0 w-32 h-32 bg-linear-to-bl from-violet-500/10 to-transparent rounded-tr-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Gigs Section -->
+<section id="gigs" class="relative min-h-screen bg-slate-950 py-20 overflow-hidden">
+  <div class="absolute inset-0 dot-pattern opacity-20"></div>
+  <div class="absolute top-20 left-10 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+    <div class="text-center mb-12 sm:mb-16">
+      <div class="inline-block mb-4">
+        <span
+          class="px-3 py-1.5 sm:px-4 sm:py-2 bg-amber-500/10 border border-amber-500/30 rounded-full text-amber-300 text-xs sm:text-sm font-bold tracking-wide backdrop-blur-sm">
+          Independent Work
+        </span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">
+        Freelance <span
+          class="text-transparent bg-clip-text bg-linear-to-r from-amber-300 via-cyan-400 to-violet-400">Gigs</span>
+      </h2>
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
+        Contract and independent projects outside company employment
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-2">
+        <div class="w-16 h-1 bg-linear-to-r from-transparent via-amber-400 to-transparent"></div>
+        <div class="w-2 h-2 bg-amber-400 rounded-full"></div>
+        <div class="w-16 h-1 bg-linear-to-r from-transparent via-amber-400 to-transparent"></div>
+      </div>
+    </div>
+
+    <div class="space-y-6 sm:space-y-8">
+      @for (gig of gigs; track gig.id) {
+      <div
+        class="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-800 bg-linear-to-br from-black to-gray-950 hover:border-amber-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-0">
+          <div class="md:col-span-2 relative min-h-48 md:min-h-full overflow-hidden">
+            <img [src]="'/images/projects/' + gig.image" [alt]="gig.title"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-black via-black/40 to-transparent">
+            </div>
+            <div class="absolute top-4 left-4">
+              <span
+                class="px-3 py-1.5 bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold rounded-full backdrop-blur-sm">
+                Independent Gig
+              </span>
+            </div>
+          </div>
+
+          <div class="md:col-span-3 p-5 sm:p-8 relative">
+            <h3 class="text-xl sm:text-2xl font-black text-white mb-2 group-hover:text-amber-300 transition-colors">
+              {{ gig.title }}
+            </h3>
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm mb-4">
+              <span class="text-cyan-400 font-bold">{{ gig.role }}</span>
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-400 font-semibold">{{ gig.period }}</span>
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-400">{{ gig.location }}</span>
+            </div>
+            <p class="text-slate-300 leading-relaxed text-sm sm:text-base mb-6">{{ gig.description }}</p>
+            @if (gig.links?.length) {
+            <div class="flex flex-wrap gap-2 mb-6">
+              @for (link of gig.links; track link.url) {
+              <a [href]="link.url" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-amber-500/10 border border-amber-400/40 text-amber-300 text-xs font-semibold hover:bg-amber-500/20 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+                {{ link.label }}
+              </a>
+              }
+            </div>
+            }
+            <div class="flex flex-wrap gap-2">
+              @for (tech of gig.technologies; track tech) {
+              <span
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-700 text-slate-200 text-xs font-semibold">
+                <span
+                  class="w-4 h-4 shrink-0 flex items-center justify-center [&>img]:w-full [&>img]:h-full [&>img]:object-contain"
+                  [class.invert]="isDarkTechIcon(tech)"
+                  [class.brightness-0]="isDarkTechIcon(tech)"
+                  [innerHTML]="getTechIcon(tech)"></span>
+                {{ tech }}
+              </span>
+              }
+            </div>
           </div>
         </div>
       </div>
@@ -585,6 +854,7 @@
             </div>
             <h3 class="text-xl sm:text-2xl font-black text-white mb-2 leading-tight">Senior Software Engineer</h3>
             <p class="text-cyan-400 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Full Stack Developer</p>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4 max-w-sm mx-auto lg:mx-0">{{ profileBio }}</p>
             <div class="h-1 w-20 bg-linear-to-r from-cyan-500 via-violet-500 to-pink-500 rounded-full"></div>
 
             <!-- Quick Stats -->
@@ -608,31 +878,9 @@
             </div>
 
             <div class="space-y-3 sm:space-y-4 text-slate-300 leading-relaxed">
-              <p class="text-sm sm:text-base">
-                As a <span class="text-cyan-400 font-semibold">Senior Software Engineer and Full Stack Developer</span>,
-                I build production software across
-                <span class="text-orange-400 font-semibold">enterprise platforms</span>,
-                <span class="text-violet-400 font-semibold">AI-powered products</span>, and
-                <span class="text-pink-400 font-semibold">Web3 applications</span>.
-                My work spans product development from early-stage systems to mature platforms, with a focus on
-                reliable delivery, clear product outcomes, and scalable technical design.
-              </p>
-              <p class="text-base">
-                My career began in business software, where I developed CRM and accounting systems that later grew into
-                <span class="text-cyan-400 font-semibold">Liteclerk Accounting</span> and
-                <span class="text-cyan-400 font-semibold">Liteclerk POS</span>.
-                I then worked on healthcare platforms such as dermatology reservation and invoicing systems in the Philippines
-                and Japan, combining software engineering with business analysis across international teams.
-              </p>
-              <p class="text-base">
-                Today, I develop and contribute to products including
-                <span class="text-violet-400 font-semibold">JINA-AI</span>,
-                <span class="text-pink-400 font-semibold">Xterium</span>,
-                <span class="text-green-400 font-semibold">Miming CAT</span>, and
-                <span class="text-orange-400 font-semibold">Xode Blockchain</span>,
-                while building <span class="text-cyan-400 font-semibold">Polaris</span>, a CRM for casino operations.
-                I bring end-to-end ownership from feature design and implementation to performance, quality, and release readiness.
-              </p>
+              @for (paragraph of expertiseParagraphs; track $index; let i = $index) {
+              <p [class]="i === 0 ? 'text-sm sm:text-base' : 'text-base'">{{ paragraph }}</p>
+              }
             </div>
 
             <!-- Tech Highlights -->
@@ -722,20 +970,45 @@
 
     <!-- Tools & Platforms -->
     <div class="mb-12 sm:mb-16">
-      <h3 class="text-2xl sm:text-3xl font-black text-white mb-3 text-center">Tools & Platforms</h3>
-      <p class="text-slate-400 text-center text-sm sm:text-base mb-6 sm:mb-8 max-w-2xl mx-auto">
-        Day-to-day engineering tools, AI coding assistants, and mobile release platforms I use across projects.
-      </p>
-      <div class="flex flex-wrap justify-center gap-3">
-        @for (tool of dailyTools; track tool) {
-        <span
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-700 text-slate-200 text-sm font-semibold hover:border-cyan-500/50 hover:text-cyan-300 transition-all">
-          <span class="w-4 h-4 shrink-0 flex items-center justify-center [&>img]:w-full [&>img]:h-full [&>img]:object-contain"
-            [class.invert]="isDarkTechIcon(tool)"
-            [class.brightness-0]="isDarkTechIcon(tool)"
-            [innerHTML]="getTechIcon(tool)"></span>
-          {{ tool }}
-        </span>
+      <div class="text-center mb-8 sm:mb-10">
+        <div class="inline-block mb-4">
+          <span
+            class="px-3 py-1.5 sm:px-4 sm:py-2 bg-violet-500/10 border border-violet-500/30 rounded-full text-violet-300 text-xs sm:text-sm font-bold tracking-wide backdrop-blur-sm">
+            AI Workflow
+          </span>
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-black text-white mb-3">Tools & Platforms</h3>
+        <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+          The AI stack I use every day to design, build, and ship faster with higher quality.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+        @for (tool of dailyTools; track tool.key) {
+        <div
+          class="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-700/80 bg-linear-to-br from-slate-950 to-slate-900 p-5 sm:p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl {{ tool.border }} {{ tool.glow }}">
+          <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-br {{ tool.accent }}">
+          </div>
+          <div class="pointer-events-none absolute -top-10 -right-10 w-28 h-28 rounded-full blur-2xl opacity-40 bg-linear-to-br {{ tool.accent }}">
+          </div>
+
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <div
+              class="w-14 h-14 rounded-2xl bg-black/50 border border-white/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+              <span
+                class="w-8 h-8 flex items-center justify-center [&>img]:w-full [&>img]:h-full [&>img]:object-contain"
+                [class.invert]="tool.invert"
+                [class.brightness-0]="tool.invert"
+                [innerHTML]="getTechIcon(tool.key)"></span>
+            </div>
+            <h4 class="text-white font-black text-sm sm:text-base group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-cyan-300 group-hover:to-violet-300 transition-all">
+              {{ tool.name }}
+            </h4>
+            <div
+              class="mt-3 h-0.5 w-8 rounded-full bg-linear-to-r from-cyan-400 via-violet-400 to-pink-400 opacity-40 group-hover:w-12 group-hover:opacity-100 transition-all duration-500">
+            </div>
+          </div>
+        </div>
         }
       </div>
     </div>
@@ -953,7 +1226,7 @@
         </div>
 
         <!-- Resume Card -->
-        <button (click)="downloadResume()"
+        <button (click)="openResume()"
           class="group bg-linear-to-br from-slate-900 to-slate-800 rounded-3xl p-8 border border-slate-700 hover:border-blue-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 cursor-pointer">
           <div
             class="w-16 h-16 bg-linear-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/30">
@@ -964,8 +1237,8 @@
             </svg>
           </div>
           <h3 class="text-white font-black text-xl mb-2 group-hover:text-blue-400 transition-colors">Resume</h3>
-          <p class="text-slate-400 text-sm mb-3">Download my CV</p>
-          <p class="text-blue-400 font-semibold text-sm">Get PDF →</p>
+          <p class="text-slate-400 text-sm mb-3">View my resume</p>
+          <p class="text-blue-400 font-semibold text-sm">Open Preview →</p>
         </button>
       </div>
 
@@ -1052,8 +1325,7 @@
           </h3>
         </div>
         <p class="text-slate-400 leading-relaxed mb-6 max-w-md">
-          Senior Software Engineer specializing in Blockchain Development, Web3 Technologies, and Ollama. Building
-          the future of decentralized applications on Polkadot and beyond.
+          Senior Software Engineer building production-ready full stack systems, AI platforms, and Web3 products that scale.
         </p>
         <div class="flex space-x-4">
           @for (social of socialLinks; track social.platform) {
@@ -1103,7 +1375,7 @@
         <h4 class="text-white font-bold mb-4 text-lg">Resources</h4>
         <ul class="space-y-3">
           <li>
-            <button (click)="downloadResume()"
+            <button (click)="openResume()"
               class="text-slate-400 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2 group cursor-pointer">
               <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
                 viewBox="0 0 24 24">
@@ -1111,7 +1383,7 @@
                   d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
                 </path>
               </svg>
-              Download CV
+              View Resume
             </button>
           </li>
           <li>
@@ -1123,6 +1395,18 @@
                   d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
               </svg>
               View Projects
+            </a>
+          </li>
+          <li>
+            <a href="#gigs"
+              class="text-slate-400 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2 group cursor-pointer">
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                </path>
+              </svg>
+              Freelance Gigs
             </a>
           </li>
           <li>

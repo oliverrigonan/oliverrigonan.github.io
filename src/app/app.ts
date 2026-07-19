@@ -18,59 +18,94 @@ export class App {
   currentSlideIndex = signal<Record<string, number>>({});
   isScrolled = signal(false);
   selectedCategory = signal<string>('All');
+  galleryProject = signal<(typeof this.projects)[number] | null>(null);
+  galleryIndex = signal(0);
+  resumeOpen = signal(false);
+  readonly cardTechLimit = 4;
 
   navItems = [
     { label: 'Home', href: '#home' },
     { label: 'Projects', href: '#projects' },
     { label: 'Experience', href: '#experience' },
+    { label: 'Gigs', href: '#gigs' },
     { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' }
+  ];
+
+  profileBio = `Senior Software Engineer trusted to design, build, and deliver production software across full stack, AI, and Web3.`;
+
+  expertiseParagraphs = [
+    `I deliver high-impact software with strong ownership from architecture and implementation to performance, quality, and release. My focus is building systems that are reliable under real usage, clear in execution, and ready for scale.`,
+    `I bring proven depth across full stack platforms, AI-powered products, and blockchain applications, including wallets, cross-chain tooling, virtual assistants, and enterprise systems. Teams and clients can count on clean delivery, solid engineering judgment, and solutions that move business goals forward.`,
+    `Whether the need is a new product, a complex feature set, or a production-ready platform, I work with precision and speed to turn requirements into software that performs, ships, and creates lasting value.`,
   ];
 
   projects = [
     {
       id: 'upwisy',
       title: 'Upwisy - AI Learning Platform',
+      summary: 'An AI learning platform for creating and delivering courses, with OpenAI integrations, agentic workflows, and RAG-powered content experiences.',
       description: 'An independent gig project focused on deep AI product work. Upwisy is an AI-powered learning platform for creating and delivering online courses, with OpenAI endpoint integrations, agentic workflow patterns, and RAG techniques for smarter content generation, personalized learning paths, and interactive learning experiences.',
       role: 'Software Engineer',
       engagement: 'Gig',
       technologies: ['Python', 'FastAPI', 'OpenAI', 'Angular', 'MongoDB', 'Qdrant', 'ChromaDB', 'Docker', 'GitHub CI/CD DevOps'],
       images: ['upwisy-1.png', 'upwisy-2.png', 'upwisy-3.png', 'upwisy-4.png', 'upwisy-5.png'],
-      category: 'AI'
+      category: 'AI',
+      links: [
+        { label: 'Upwisy Website', url: 'https://upwisy.com/' },
+        { label: 'Upwisy App', url: 'https://app.upwisy.com/' }
+      ]
     },
     {
       id: 'miming',
       title: 'Miming CAT (Cross Access Token)',
+      summary: 'A cross-chain token bridge that moves digital assets securely across multiple blockchain networks with strong interoperability focus.',
       description: 'A cross-chain token bridge solution that enables seamless transfer of digital assets across multiple blockchain networks. Miming CAT provides a secure and efficient way to move tokens between different chains, enhancing interoperability and expanding the possibilities for decentralized applications (dApps) and users in the blockchain ecosystem.',
       role: 'Lead Software Engineer',
       engagement: 'Company',
       technologies: ['TypeScript', 'NestJS', 'Angular', 'MongoDB', 'PolkadotJS', 'Polkadot XCM', 'Docker', 'GitHub CI/CD DevOps'],
       images: ['miming-1.png', 'miming-2.png', 'miming-3.png', 'miming-4.png', 'miming-5.png'],
-      category: 'Web3'
+      category: 'Web3',
+      links: [
+        { label: 'Miming DApp', url: 'https://dapp.miming.net/' }
+      ]
     },
     {
       id: 'xterium-wallet',
       title: 'Xterium Wallet',
+      summary: 'A multi-platform Web3 wallet for managing digital assets across Xode and Assethub, available on mobile, web, and browser extension.',
       description: 'A secure and versatile Web3 wallet for the Xode Blockchain, enabling users to manage digital assets across multiple networks (Xode, Assethub). Designed to deliver seamless blockchain finance experiences while prioritizing security and user-friendly interaction across mobile apps, web, and browser extension surfaces.',
       role: 'Lead Software Engineer',
       engagement: 'Company',
       technologies: ['Angular', 'Ionic Framework', 'PolkadotJS', 'Google Play Console', 'App Store Connect', 'Chrome Extension'],
       images: ['xterium-1.png', 'xterium-2.png', 'xterium-3.png'],
-      category: 'Mobile App'
+      category: 'Mobile App',
+      links: [
+        { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.xterium.wallet&hl=en' },
+        { label: 'App Store', url: 'https://apps.apple.com/ph/app/xterium/id6745164228' }
+      ]
     },
     {
       id: 'xode-blockchain',
       title: 'Xode Blockchain',
+      summary: 'A Polkadot-connected blockchain platform with on-chain governance for Web3 games and enterprise decentralized applications.',
       description: 'A comprehensive blockchain platform with built-in on-chain governance, empowering developers to create Web3 games and enterprise decentralized applications (dApps). Supports development using Rust and Solidity and integrates with Polkadot to bridge gaming and business operations into the blockchain ecosystem.',
       role: 'Software Engineer',
       engagement: 'Company',
       technologies: ['Rust', 'Substrate (Polkadot SDK)'],
       images: ['xode-1.png', 'xode-2.png', 'xode-3.png'],
-      category: 'Web3'
+      category: 'Web3',
+      links: [
+        { label: 'Xode Website', url: 'https://xode.net/' },
+        { label: 'Blockscanner', url: 'https://blockscanner.xode.net/' },
+        { label: 'Xode Node', url: 'https://node.xode.net/' },
+        { label: 'Polkadot.js Apps', url: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpolkadot-rpcnode.xode.net#/explorer' }
+      ]
     },
     {
       id: 'jina-chatbot',
       title: 'JINA Virtual/AI Assistant - Chatbot',
+      summary: 'An AI virtual assistant platform for deploying specialized chatbots focused on customer engagement and operational tasks.',
       description: 'An AI-powered virtual assistant platform that enhances customer engagement and operational efficiency. Leveraging local and hosted LLM tooling, JINA enables businesses to deploy specialized virtual assistants tailored to handle specific operational tasks and address unique customer needs.',
       role: 'Lead Software Engineer',
       engagement: 'Company',
@@ -81,6 +116,7 @@ export class App {
     {
       id: 'hiro-clinic',
       title: 'Hiro Clinic - Beauty System',
+      summary: 'A dermatology clinic platform for Japan covering appointments, billing, patient records, and treatment planning in one system.',
       description: 'A complete Web2 platform tailored for dermatology clinics in Japan. Streamlines daily clinic operations with integrated features for appointment scheduling, job order tracking, billing, patient management, and treatment planning, enhancing efficiency and patient experience.',
       role: 'Software Engineer',
       engagement: 'Company',
@@ -91,6 +127,7 @@ export class App {
     {
       id: 'intellistream',
       title: 'IntelliStream',
+      summary: 'A client-customized streaming subscription manager that tracks plans and recommends more cost-effective combinations.',
       description: 'A system customized for Liteclerk Corporation clients. IntelliStream is a cloud-based budgeting and management tool designed to track streaming subscriptions, shows, and services, then analyze usage to recommend the most cost-effective combination of streaming plans.',
       role: 'Software Developer',
       engagement: 'Company',
@@ -102,6 +139,7 @@ export class App {
     {
       id: 'vaccine-tracker',
       title: 'Vaccine Tracker',
+      summary: 'A client-customized health tool that tracks vaccination eligibility and sends timely phone or email reminders.',
       description: 'A system customized for Liteclerk Corporation clients. Vaccine Tracker monitors vaccination eligibility for individuals and families, and sends timely phone or email notifications when new immunization opportunities become available.',
       role: 'Software Developer',
       engagement: 'Company',
@@ -113,31 +151,76 @@ export class App {
     {
       id: 'liteclerk-fis',
       title: 'Liteclerk - Cloud Accounting Software',
+      summary: 'A cloud accounting SaaS for trading businesses covering sales, payables, inventory, warehouse, and financial workflows.',
       description: 'A robust cloud-based SaaS accounting platform built for trading businesses. Offers comprehensive functionality including customer and sales management, payables, supply-chain tracking, inventory and warehouse management, accounting, and finance, all accessible securely via the cloud.',
       role: 'Software Developer',
       engagement: 'Company',
       technologies: ['C#', 'ASP.NET MVC 5', 'JavaScript', 'Microsoft SQL Server', 'LINQ'],
       images: ['liteclerk-fis-1.png', 'liteclerk-fis-2.png'],
-      category: 'Web2'
+      category: 'Web2',
+      links: [
+        { label: 'Liteclerk Website', url: 'https://www.liteclerk.com/' },
+        { label: 'Liteclerk Demo', url: 'https://demo.liteclerk.com/' }
+      ]
     },
     {
       id: 'liteclerk-pos',
       title: 'Liteclerk POS',
+      summary: 'A point-of-sale system with real-time inventory, sales tracking, and operational reporting for day-to-day business control.',
       description: 'A lightweight yet powerful Point-of-Sale system that simplifies operational workflows for businesses. Provides real-time inventory tracking, instant sales and collection summaries, and detailed reports to control operations, minimize losses, and optimize cash flow management.',
       role: 'Software Developer',
       engagement: 'Company',
       technologies: ['C#', '.NET Framework', 'WinForms', 'Microsoft SQL Server', 'LINQ'],
       images: ['liteclerk-pos-1.png', 'liteclerk-pos-2.png'],
-      category: 'Desktop App'
+      category: 'Desktop App',
+      links: [
+        { label: 'Liteclerk Website', url: 'https://www.liteclerk.com/' },
+        { label: 'Liteclerk Demo', url: 'https://demo.liteclerk.com/' }
+      ]
     },
   ];
 
   dailyTools = [
-    'GitHub Copilot',
-    'Claude Code',
-    'Cursor',
-    'OpenAI',
-    'Ollama',
+    {
+      key: 'GitHub Copilot',
+      name: 'GitHub Copilot',
+      accent: 'from-slate-100/20 to-slate-500/10',
+      border: 'hover:border-slate-300/50',
+      glow: 'group-hover:shadow-slate-400/20',
+      invert: false
+    },
+    {
+      key: 'Claude Code',
+      name: 'Claude Code',
+      accent: 'from-orange-400/20 to-amber-500/10',
+      border: 'hover:border-orange-400/50',
+      glow: 'group-hover:shadow-orange-400/20',
+      invert: false
+    },
+    {
+      key: 'Cursor',
+      name: 'Cursor',
+      accent: 'from-cyan-400/20 to-blue-500/10',
+      border: 'hover:border-cyan-400/50',
+      glow: 'group-hover:shadow-cyan-400/20',
+      invert: true
+    },
+    {
+      key: 'OpenAI',
+      name: 'OpenAI',
+      accent: 'from-emerald-400/20 to-teal-500/10',
+      border: 'hover:border-emerald-400/50',
+      glow: 'group-hover:shadow-emerald-400/20',
+      invert: false
+    },
+    {
+      key: 'Ollama',
+      name: 'Ollama',
+      accent: 'from-violet-400/20 to-purple-500/10',
+      border: 'hover:border-violet-400/50',
+      glow: 'group-hover:shadow-violet-400/20',
+      invert: false
+    },
   ];
 
   heroTechs = [
@@ -192,16 +275,6 @@ export class App {
       logo: '/images/experiences/blockspace.png'
     },
     {
-      company: 'Independent Gig',
-      position: 'Software Engineer',
-      period: 'Contract / Gig',
-      location: 'Remote',
-      type: 'Gig',
-      description: `Delivered Upwisy, an AI learning platform built as an independent gig with no client company on the delivery side. Integrated OpenAI endpoints, designed agentic workflow patterns, and applied RAG techniques to support AI-assisted course creation, content generation, and personalized learning experiences. Owned end-to-end feature development across backend services, data flows, and application delivery with Docker and GitHub CI/CD DevOps.`,
-      current: false,
-      logo: '/images/projects/upwisy-1.png'
-    },
-    {
       company: '4NEXGEN',
       position: 'Senior Software Engineer',
       period: 'Sep 2023 - Nov 2025 · 2 yrs 3 mos',
@@ -250,6 +323,23 @@ export class App {
       description: `Began as an intern and was later absorbed into a full-time Software Developer role. Developed the Innosoft website and CRM platform to manage leads, deliveries, and client support, with features for sales activity logging, issue tracking, and account executive performance monitoring. Designed and developed Easyfis Accounting Software, which later evolved into Liteclerk Accounting Software and formed the product foundation of Liteclerk Corporation.`,
       current: false,
       logo: '/images/experiences/innosoft.png'
+    }
+  ];
+
+  gigs = [
+    {
+      id: 'upwisy',
+      title: 'Upwisy - AI Learning Platform',
+      role: 'Software Engineer',
+      period: 'Contract / Gig',
+      location: 'Remote',
+      description: `An independent gig focused on deep AI product work. Built Upwisy as an AI-powered learning platform for creating and delivering online courses, with OpenAI endpoint integrations, agentic workflow patterns, and RAG techniques for smarter content generation, personalized learning paths, and interactive learning experiences.`,
+      technologies: ['Python', 'FastAPI', 'OpenAI', 'Angular', 'MongoDB', 'Qdrant', 'ChromaDB', 'Docker', 'GitHub CI/CD DevOps'],
+      image: 'upwisy-1.png',
+      links: [
+        { label: 'Upwisy Website', url: 'https://upwisy.com/' },
+        { label: 'Upwisy App', url: 'https://app.upwisy.com/' }
+      ]
     }
   ];
 
@@ -320,10 +410,79 @@ export class App {
     this.currentSlideIndex.update(indexes => ({ ...indexes, [projectId]: index }));
   }
 
+  openGallery(project: (typeof this.projects)[number], event?: Event): void {
+    event?.stopPropagation();
+    this.galleryProject.set(project);
+    this.galleryIndex.set(this.getCurrentSlideIndex(project.id));
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeGallery(): void {
+    this.galleryProject.set(null);
+    if (!this.resumeOpen()) {
+      document.body.style.overflow = '';
+    }
+  }
+
+  nextGalleryImage(): void {
+    const project = this.galleryProject();
+    if (!project || project.images.length <= 1) {
+      return;
+    }
+    this.galleryIndex.update(index => (index + 1) % project.images.length);
+  }
+
+  previousGalleryImage(): void {
+    const project = this.galleryProject();
+    if (!project || project.images.length <= 1) {
+      return;
+    }
+    this.galleryIndex.update(index => (index - 1 + project.images.length) % project.images.length);
+  }
+
+  setGalleryIndex(index: number): void {
+    this.galleryIndex.set(index);
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  onWindowKeydown(event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+      if (this.galleryProject()) {
+        this.closeGallery();
+      }
+      if (this.resumeOpen()) {
+        this.closeResume();
+      }
+      return;
+    }
+
+    if (!this.galleryProject()) {
+      return;
+    }
+
+    if (event.key === 'ArrowRight') {
+      this.nextGalleryImage();
+    } else if (event.key === 'ArrowLeft') {
+      this.previousGalleryImage();
+    }
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
     this.isScrolled.set(scrollPosition > 50);
+  }
+
+  openResume(): void {
+    this.resumeOpen.set(true);
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeResume(): void {
+    this.resumeOpen.set(false);
+    if (!this.galleryProject()) {
+      document.body.style.overflow = '';
+    }
   }
 
   downloadResume(): void {
@@ -331,6 +490,14 @@ export class App {
     link.href = '/docs/cv.pdf';
     link.download = 'Noah_Oliver_Rigonan_CV.pdf';
     link.click();
+  }
+
+  getCardTechnologies(technologies: string[]): string[] {
+    return technologies.slice(0, this.cardTechLimit);
+  }
+
+  getHiddenTechCount(technologies: string[]): number {
+    return Math.max(technologies.length - this.cardTechLimit, 0);
   }
 
   isDarkTechIcon(tech: string): boolean {
