@@ -407,7 +407,7 @@
 
 <!-- Project Gallery Modal -->
 @if (galleryProject(); as project) {
-<div class="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 animate-modal-backdrop" role="dialog"
+<div class="fixed inset-0 z-100 flex items-center justify-center p-3 sm:p-6 animate-modal-backdrop" role="dialog"
   aria-modal="true" [attr.aria-label]="project.title + ' details'">
   <div class="absolute inset-0 bg-black/80 backdrop-blur-md" (click)="closeGallery()"></div>
 
@@ -534,7 +534,7 @@
 
 <!-- Resume Modal -->
 @if (resumeOpen()) {
-<div class="fixed inset-0 z-[100] flex items-center justify-center p-2 sm:p-4 animate-modal-backdrop" role="dialog"
+<div class="fixed inset-0 z-100 flex items-center justify-center p-2 sm:p-4 animate-modal-backdrop" role="dialog"
   aria-modal="true" aria-label="Resume preview">
   <div class="absolute inset-0 bg-black/80 backdrop-blur-md" (click)="closeResume()"></div>
 
@@ -765,7 +765,7 @@
               <span class="text-slate-400">{{ gig.location }}</span>
             </div>
             <p class="text-slate-300 leading-relaxed text-sm sm:text-base mb-6">{{ gig.description }}</p>
-            @if (gig.links?.length) {
+            @if (gig.links.length) {
             <div class="flex flex-wrap gap-2 mb-6">
               @for (link of gig.links; track link.url) {
               <a [href]="link.url" target="_blank" rel="noopener noreferrer"
