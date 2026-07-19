@@ -177,55 +177,22 @@
         </div>
 
         <!-- Tech Stack Icons -->
-        <div class="mt-8 flex flex-wrap justify-center lg:justify-start items-center gap-6 animate-fade-in"
-          style="animation-delay: 1s;">
-          <div class="text-center group cursor-pointer">
-            <div class="w-10 h-10 mx-auto text-blue-500 group-hover:text-blue-400 group-hover:scale-125 transition-all"
-              [innerHTML]="getTechIcon('TypeScript')"></div>
-            <p class="text-slate-400 text-xs font-semibold mt-2">TypeScript</p>
-          </div>
-          <div class="text-center group cursor-pointer">
-            <div class="w-10 h-10 mx-auto text-red-600 group-hover:text-red-500 group-hover:scale-125 transition-all"
-              [innerHTML]="getTechIcon('Angular')"></div>
-            <p class="text-slate-400 text-xs font-semibold mt-2">Angular</p>
-          </div>
-          <div class="text-center group cursor-pointer">
-            <div class="w-10 h-10 mx-auto text-red-600 group-hover:text-red-500 group-hover:scale-125 transition-all"
-              [innerHTML]="getTechIcon('Ionic Framework')"></div>
-            <p class="text-slate-400 text-xs font-semibold mt-2">Ionic Framework</p>
-          </div>
-          <div class="text-center group cursor-pointer">
-            <div class="w-10 h-10 mx-auto text-red-600 group-hover:text-red-500 group-hover:scale-125 transition-all"
-              [innerHTML]="getTechIcon('NestJS')"></div>
-            <p class="text-slate-400 text-xs font-semibold mt-2">NestJS</p>
-          </div>
-          <div class="text-center group cursor-pointer">
-            <div class="w-10 h-10 mx-auto text-red-600 group-hover:text-red-500 group-hover:scale-125 transition-all"
-              [innerHTML]="getTechIcon('FastAPI')"></div>
-            <p class="text-slate-400 text-xs font-semibold mt-2">FastAPI</p>
-          </div>
-          <div class="text-center group cursor-pointer">
+        <div class="mt-8 animate-fade-in" style="animation-delay: 1s;">
+          <div class="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-2.5">
+            @for (tech of heroTechs; track tech.key) {
             <div
-              class="w-10 h-10 mx-auto text-violet-500 group-hover:text-violet-400 group-hover:scale-125 transition-all"
-              [innerHTML]="getTechIcon('Ollama')"></div>
-            <p class="text-slate-400 text-xs font-semibold mt-2">Ollama</p>
-          </div>
-          <div class="text-center group cursor-pointer">
-            <div
-              class="w-10 h-10 mx-auto text-violet-500 group-hover:text-violet-400 group-hover:scale-125 transition-all"
-              [innerHTML]="getTechIcon('OpenAI')"></div>
-            <p class="text-slate-400 text-xs font-semibold mt-2">Open AI</p>
-          </div>
-          <div class="text-center group cursor-pointer">
-            <div
-              class="w-10 h-10 mx-auto text-orange-500 group-hover:text-orange-400 group-hover:scale-125 transition-all"
-              [innerHTML]="getTechIcon('Rust')"></div>
-            <p class="text-slate-400 text-xs font-semibold mt-2">Rust</p>
-          </div>
-          <div class="text-center group cursor-pointer">
-            <div class="w-10 h-10 mx-auto text-sky-500 group-hover:text-sky-400 group-hover:scale-125 transition-all"
-              [innerHTML]="getTechIcon('Docker')"></div>
-            <p class="text-slate-400 text-xs font-semibold mt-2">Docker</p>
+              class="group inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-xl bg-slate-950/70 border border-slate-700/80 hover:border-cyan-400/50 hover:bg-slate-900/90 transition-all duration-300 cursor-pointer"
+              [title]="tech.label">
+              <span
+                class="w-5 h-5 sm:w-6 sm:h-6 shrink-0 flex items-center justify-center [&>img]:w-full [&>img]:h-full [&>img]:object-contain"
+                [class.invert]="tech.invert"
+                [class.brightness-0]="tech.invert"
+                [innerHTML]="getTechIcon(tech.key)"></span>
+              <span class="text-xs sm:text-sm font-semibold text-slate-300 group-hover:text-cyan-300 transition-colors whitespace-nowrap">
+                {{ tech.label }}
+              </span>
+            </div>
+            }
           </div>
         </div>
       </div>
@@ -262,7 +229,7 @@
         Featured <span class="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Projects</span>
       </h2>
       <p class="text-slate-300 text-lg max-w-2xl mx-auto">
-        Showcasing innovative solutions in blockchain, AI, and enterprise applications
+        Company products and independent gig work across blockchain, AI, mobile, and enterprise software
       </p>
       <div class="mt-6 flex items-center justify-center gap-2">
         <div class="w-16 h-1 bg-linear-to-r from-transparent via-blue-500 to-transparent"></div>
@@ -378,25 +345,44 @@
           <!-- Decorative element -->
           <div class="absolute top-0 left-8 w-12 h-1 bg-linear-to-r from-blue-500 to-blue-500"></div>
 
-          <h3 class="text-2xl font-black text-white mb-2 mt-2 group-hover:text-cyan-400 transition-colors">{{
-            project.title }}</h3>
-          <div class="flex items-center gap-2 mb-4">
-            <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-              </path>
-            </svg>
-            <p class="text-cyan-400 text-sm font-bold">{{ project.role }}</p>
+          <div class="flex flex-wrap items-center gap-2 mb-2 mt-2">
+            <h3 class="text-2xl font-black text-white group-hover:text-cyan-400 transition-colors">{{
+              project.title }}</h3>
+            @if (project.engagement === 'Gig') {
+            <span
+              class="px-2.5 py-1 bg-amber-500/15 border border-amber-400/40 text-amber-300 text-[10px] font-bold tracking-wide rounded-full uppercase">
+              Independent Gig
+            </span>
+            }
           </div>
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                </path>
+              </svg>
+              <p class="text-cyan-400 text-sm font-bold">{{ project.role }}</p>
+            </div>
+            @if (project.company) {
+            <span class="text-slate-500 text-sm">·</span>
+            <p class="text-slate-400 text-sm font-semibold">{{ project.company }}</p>
+            }
+          </div>
+
           <p class="text-slate-300 mb-6 leading-relaxed">{{ project.description }}</p>
 
           <!-- Technologies -->
-          <div class="flex flex-wrap items-center gap-4">
+          <div class="flex flex-wrap gap-2">
             @for (tech of project.technologies; track tech) {
-            <div
-              class="flex items-center justify-center w-8 h-8 text-cyan-400 hover:text-blue-400 transition-all duration-300 hover:scale-125 cursor-pointer"
-              [title]="tech" [innerHTML]="getTechIcon(tech)">
-            </div>
+            <span
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-700 text-slate-200 text-xs font-semibold hover:border-cyan-500/50 hover:text-cyan-300 transition-all">
+              <span class="w-4 h-4 shrink-0 flex items-center justify-center [&>img]:w-full [&>img]:h-full [&>img]:object-contain"
+                [class.invert]="isDarkTechIcon(tech)"
+                [class.brightness-0]="isDarkTechIcon(tech)"
+                [innerHTML]="getTechIcon(tech)"></span>
+              {{ tech }}
+            </span>
             }
           </div>
         </div>
@@ -503,6 +489,11 @@
                 class="inline-flex items-center gap-2 px-4 py-2 bg-linear-to-r from-cyan-500/20 to-violet-500/20 border border-cyan-400/50 text-cyan-400 text-sm font-bold rounded-full shadow-lg shadow-cyan-500/20">
                 <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
                 Current Position
+              </span>
+              } @else if (exp.type === 'Gig') {
+              <span
+                class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/15 border border-amber-400/40 text-amber-300 text-sm font-bold rounded-full">
+                Independent Gig
               </span>
               }
             </div>
@@ -619,23 +610,28 @@
             <div class="space-y-3 sm:space-y-4 text-slate-300 leading-relaxed">
               <p class="text-sm sm:text-base">
                 As a <span class="text-cyan-400 font-semibold">Senior Software Engineer and Full Stack Developer</span>,
-                I specialize in building intelligent and scalable software solutions across
-                <span class="text-orange-400 font-semibold">Full Stack Development</span>,
-                <span class="text-violet-400 font-semibold">Agentic AI Systems</span>, and
-                <span class="text-pink-400 font-semibold">Web3 Solutions</span>. I design and implement
-                modern applications that combine cloud technologies, AI-driven automation, and
-                <span class="text-green-400 font-semibold">CI/CD and DevOps practices</span> to ensure reliable and
-                efficient software delivery.
+                I build production software across
+                <span class="text-orange-400 font-semibold">enterprise platforms</span>,
+                <span class="text-violet-400 font-semibold">AI-powered products</span>, and
+                <span class="text-pink-400 font-semibold">Web3 applications</span>.
+                My work spans product development from early-stage systems to mature platforms, with a focus on
+                reliable delivery, clear product outcomes, and scalable technical design.
               </p>
               <p class="text-base">
-                I create robust and high-performance systems that are secure, scalable, and adaptable, delivering
-                seamless digital experiences for users while enabling businesses to leverage emerging technologies
-                effectively.
+                My career began in business software, where I developed CRM and accounting systems that later grew into
+                <span class="text-cyan-400 font-semibold">Liteclerk Accounting</span> and
+                <span class="text-cyan-400 font-semibold">Liteclerk POS</span>.
+                I then worked on healthcare platforms such as dermatology reservation and invoicing systems in the Philippines
+                and Japan, combining software engineering with business analysis across international teams.
               </p>
               <p class="text-base">
-                Driven by a passion for innovation, I collaborate closely with cross-functional teams to develop
-                cutting-edge solutions that push the boundaries of AI, Web2, and modern software engineering,
-                helping organizations stay ahead in the rapidly evolving digital landscape.
+                Today, I develop and contribute to products including
+                <span class="text-violet-400 font-semibold">JINA-AI</span>,
+                <span class="text-pink-400 font-semibold">Xterium</span>,
+                <span class="text-green-400 font-semibold">Miming CAT</span>, and
+                <span class="text-orange-400 font-semibold">Xode Blockchain</span>,
+                while building <span class="text-cyan-400 font-semibold">Polaris</span>, a CRM for casino operations.
+                I bring end-to-end ownership from feature design and implementation to performance, quality, and release readiness.
               </p>
             </div>
 
@@ -646,13 +642,17 @@
               <span
                 class="px-3 py-1.5 bg-pink-500/10 border border-pink-500/30 rounded-full text-pink-400 text-xs font-semibold">NestJS</span>
               <span
-                class="px-3 py-1.5 bg-violet-500/10 border border-violet-500/30 rounded-full text-violet-400 text-xs font-semibold">MongoDB</span>
+                class="px-3 py-1.5 bg-violet-500/10 border border-violet-500/30 rounded-full text-violet-400 text-xs font-semibold">FastAPI</span>
               <span
-                class="px-3 py-1.5 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs font-semibold">Rust</span>
+                class="px-3 py-1.5 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs font-semibold">OpenAI</span>
               <span
-                class="px-3 py-1.5 bg-blue-500/10 border border-blue-500/30 rounded-full text-blue-400 text-xs font-semibold">Polkadot</span>
+                class="px-3 py-1.5 bg-blue-500/10 border border-blue-500/30 rounded-full text-blue-400 text-xs font-semibold">Rust</span>
               <span
-                class="px-3 py-1.5 bg-purple-500/10 border border-purple-500/30 rounded-full text-purple-400 text-xs font-semibold">Docker</span>
+                class="px-3 py-1.5 bg-purple-500/10 border border-purple-500/30 rounded-full text-purple-400 text-xs font-semibold">Polkadot</span>
+              <span
+                class="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-xs font-semibold">Docker</span>
+              <span
+                class="px-3 py-1.5 bg-amber-500/10 border border-amber-500/30 rounded-full text-amber-300 text-xs font-semibold">Cursor</span>
             </div>
           </div>
         </div>
@@ -687,7 +687,7 @@
             </svg>
           </div>
           <p class="text-white font-bold text-center mb-2">Agentic AI</p>
-          <p class="text-slate-400 text-sm text-center">LLaMA, Ollama, FastAPI</p>
+          <p class="text-slate-400 text-sm text-center">OpenAI, RAG, FastAPI</p>
         </div>
 
         <div
@@ -714,9 +714,29 @@
               </path>
             </svg>
           </div>
-          <p class="text-white font-bold text-center mb-2">Leadership</p>
-          <p class="text-slate-400 text-sm text-center">Agile, Scrum, Mentoring</p>
+          <p class="text-white font-bold text-center mb-2">AI Tooling</p>
+          <p class="text-slate-400 text-sm text-center">Copilot, Claude, Cursor</p>
         </div>
+      </div>
+    </div>
+
+    <!-- Tools & Platforms -->
+    <div class="mb-12 sm:mb-16">
+      <h3 class="text-2xl sm:text-3xl font-black text-white mb-3 text-center">Tools & Platforms</h3>
+      <p class="text-slate-400 text-center text-sm sm:text-base mb-6 sm:mb-8 max-w-2xl mx-auto">
+        Day-to-day engineering tools, AI coding assistants, and mobile release platforms I use across projects.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        @for (tool of dailyTools; track tool) {
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-700 text-slate-200 text-sm font-semibold hover:border-cyan-500/50 hover:text-cyan-300 transition-all">
+          <span class="w-4 h-4 shrink-0 flex items-center justify-center [&>img]:w-full [&>img]:h-full [&>img]:object-contain"
+            [class.invert]="isDarkTechIcon(tool)"
+            [class.brightness-0]="isDarkTechIcon(tool)"
+            [innerHTML]="getTechIcon(tool)"></span>
+          {{ tool }}
+        </span>
+        }
       </div>
     </div>
 

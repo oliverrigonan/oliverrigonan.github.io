@@ -31,9 +31,10 @@ export class App {
     {
       id: 'upwisy',
       title: 'Upwisy - AI Learning Platform',
-      description: 'AI-powered platform built to streamline the creation and delivery of online learning experiences. Upwisy enables educators to easily create, manage, and deliver engaging courses with the help of AI-driven content generation, personalized learning paths, and interactive features that enhance student engagement and learning outcomes.',
-      role: 'Lead Software Engineer',
-      technologies: ['Angular', 'TypeScript', 'NestJS', 'OpenAI', 'MongoDB', 'Docker'],
+      description: 'An independent gig project focused on deep AI product work. Upwisy is an AI-powered learning platform for creating and delivering online courses, with OpenAI endpoint integrations, agentic workflow patterns, and RAG techniques for smarter content generation, personalized learning paths, and interactive learning experiences.',
+      role: 'Software Engineer',
+      engagement: 'Gig',
+      technologies: ['Python', 'FastAPI', 'OpenAI', 'Angular', 'MongoDB', 'Qdrant', 'ChromaDB', 'Docker', 'GitHub CI/CD DevOps'],
       images: ['upwisy-1.png', 'upwisy-2.png', 'upwisy-3.png', 'upwisy-4.png', 'upwisy-5.png'],
       category: 'AI'
     },
@@ -42,16 +43,18 @@ export class App {
       title: 'Miming CAT (Cross Access Token)',
       description: 'A cross-chain token bridge solution that enables seamless transfer of digital assets across multiple blockchain networks. Miming CAT provides a secure and efficient way to move tokens between different chains, enhancing interoperability and expanding the possibilities for decentralized applications (dApps) and users in the blockchain ecosystem.',
       role: 'Lead Software Engineer',
-      technologies: ['Angular', 'TypeScript', 'NestJS', 'Polkadot', 'Rust', 'Substrate', 'MongoDB', 'Docker'],
+      engagement: 'Company',
+      technologies: ['TypeScript', 'NestJS', 'Angular', 'MongoDB', 'PolkadotJS', 'Polkadot XCM', 'Docker', 'GitHub CI/CD DevOps'],
       images: ['miming-1.png', 'miming-2.png', 'miming-3.png', 'miming-4.png', 'miming-5.png'],
       category: 'Web3'
     },
     {
       id: 'xterium-wallet',
       title: 'Xterium Wallet',
-      description: 'A secure and versatile Web3 wallet for the Xode Blockchain, enabling users to manage digital assets across multiple networks (Xode, Assethub). Designed to deliver seamless blockchain finance experiences while prioritizing security and user-friendly interaction.',
+      description: 'A secure and versatile Web3 wallet for the Xode Blockchain, enabling users to manage digital assets across multiple networks (Xode, Assethub). Designed to deliver seamless blockchain finance experiences while prioritizing security and user-friendly interaction across mobile apps, web, and browser extension surfaces.',
       role: 'Lead Software Engineer',
-      technologies: ['Ionic Framework', 'Angular', 'TypeScript', 'Polkadot', 'Android', 'iOS'],
+      engagement: 'Company',
+      technologies: ['Angular', 'Ionic Framework', 'PolkadotJS', 'Google Play Console', 'App Store Connect', 'Chrome Extension'],
       images: ['xterium-1.png', 'xterium-2.png', 'xterium-3.png'],
       category: 'Mobile App'
     },
@@ -60,52 +63,60 @@ export class App {
       title: 'Xode Blockchain',
       description: 'A comprehensive blockchain platform with built-in on-chain governance, empowering developers to create Web3 games and enterprise decentralized applications (dApps). Supports development using Rust and Solidity and integrates with Polkadot to bridge gaming and business operations into the blockchain ecosystem.',
       role: 'Software Engineer',
-      technologies: ['Rust', 'Substrate', 'Polkadot'],
+      engagement: 'Company',
+      technologies: ['Rust', 'Substrate (Polkadot SDK)'],
       images: ['xode-1.png', 'xode-2.png', 'xode-3.png'],
       category: 'Web3'
     },
     {
       id: 'jina-chatbot',
       title: 'JINA Virtual/AI Assistant - Chatbot',
-      description: 'An AI-powered virtual assistant platform that enhances customer engagement and operational efficiency. Leveraging MetaAI LLaMA models, JINA enables businesses to deploy specialized virtual assistants tailored to handle specific operational tasks and address unique customer needs.',
+      description: 'An AI-powered virtual assistant platform that enhances customer engagement and operational efficiency. Leveraging local and hosted LLM tooling, JINA enables businesses to deploy specialized virtual assistants tailored to handle specific operational tasks and address unique customer needs.',
       role: 'Lead Software Engineer',
-      technologies: ['TypeScript', 'Python', 'FastAPI', 'MongoDB', 'Ollama', 'Docker'],
+      engagement: 'Company',
+      technologies: ['Python', 'FastAPI', 'Ollama', 'LM Studio', 'Vue', 'MongoDB', 'Qdrant', 'ChromaDB', 'Proxmox', 'Docker', 'GitHub CI/CD DevOps'],
       images: ['jina-1.png', 'jina-2.png', 'jina-3.png', 'jina-4.png'],
       category: 'AI'
     },
     {
       id: 'hiro-clinic',
       title: 'Hiro Clinic - Beauty System',
-      description: 'A complete Web2 platform tailored for dermatology clinics in Japan. Streamlines daily clinic operations with integrated features for appointment scheduling, job order tracking, billing, patient management, and treatment planning—enhancing efficiency and patient experience.',
+      description: 'A complete Web2 platform tailored for dermatology clinics in Japan. Streamlines daily clinic operations with integrated features for appointment scheduling, job order tracking, billing, patient management, and treatment planning, enhancing efficiency and patient experience.',
       role: 'Software Engineer',
-      technologies: ['TypeScript', 'Angular', 'Laravel', 'MySQL'],
+      engagement: 'Company',
+      technologies: ['PHP', 'Laravel', 'Angular', 'MySQL', 'AWS', 'Docker', 'GitHub CI/CD DevOps'],
       images: ['hiro-1.png', 'hiro-2.png', 'hiro-3.png'],
       category: 'Web2'
     },
     {
       id: 'intellistream',
       title: 'IntelliStream',
-      description: 'A cloud-based budgeting and management tool designed to track streaming subscriptions, shows, and services. IntelliStream analyzes your usage to recommend the most cost-effective combination of streaming services, helping users save money and optimize subscriptions.',
+      description: 'A system customized for Liteclerk Corporation clients. IntelliStream is a cloud-based budgeting and management tool designed to track streaming subscriptions, shows, and services, then analyze usage to recommend the most cost-effective combination of streaming plans.',
       role: 'Software Developer',
-      technologies: ['TypeScript', 'Angular', 'Laravel', 'MySQL'],
+      engagement: 'Company',
+      company: 'Liteclerk Corporation',
+      technologies: ['PHP', 'Laravel', 'Angular', 'MySQL', 'AWS', 'Docker', 'GitHub CI/CD DevOps'],
       images: ['intellistream-1.png', 'intellistream-2.png'],
       category: 'Web2'
     },
     {
       id: 'vaccine-tracker',
       title: 'Vaccine Tracker',
-      description: 'A proactive health management tool that monitors vaccination eligibility for you and your family. Sends timely notifications via phone or email when new opportunities arise, ensuring you stay up-to-date with required immunizations.',
+      description: 'A system customized for Liteclerk Corporation clients. Vaccine Tracker monitors vaccination eligibility for individuals and families, and sends timely phone or email notifications when new immunization opportunities become available.',
       role: 'Software Developer',
-      technologies: ['TypeScript', 'Angular', 'Laravel', 'MySQL'],
+      engagement: 'Company',
+      company: 'Liteclerk Corporation',
+      technologies: ['PHP', 'Laravel', 'Angular', 'MySQL', 'AWS', 'Docker', 'GitHub CI/CD DevOps'],
       images: ['vaccine-tracker-1.png', 'vaccine-tracker-2.png'],
       category: 'Web2'
     },
     {
       id: 'liteclerk-fis',
       title: 'Liteclerk - Cloud Accounting Software',
-      description: 'A robust cloud-based SaaS accounting platform built for trading businesses. Offers comprehensive functionality including customer and sales management, payables, supply-chain tracking, inventory and warehouse management, accounting, and finance—all accessible securely via the cloud.',
+      description: 'A robust cloud-based SaaS accounting platform built for trading businesses. Offers comprehensive functionality including customer and sales management, payables, supply-chain tracking, inventory and warehouse management, accounting, and finance, all accessible securely via the cloud.',
       role: 'Software Developer',
-      technologies: ['JavaScript', 'C#', 'ASP.NET', 'Microsoft SQL Server'],
+      engagement: 'Company',
+      technologies: ['C#', 'ASP.NET MVC 5', 'JavaScript', 'Microsoft SQL Server', 'LINQ'],
       images: ['liteclerk-fis-1.png', 'liteclerk-fis-2.png'],
       category: 'Web2'
     },
@@ -114,10 +125,38 @@ export class App {
       title: 'Liteclerk POS',
       description: 'A lightweight yet powerful Point-of-Sale system that simplifies operational workflows for businesses. Provides real-time inventory tracking, instant sales and collection summaries, and detailed reports to control operations, minimize losses, and optimize cash flow management.',
       role: 'Software Developer',
-      technologies: ['C#', '.NET Framework', 'Microsoft SQL Server'],
+      engagement: 'Company',
+      technologies: ['C#', '.NET Framework', 'WinForms', 'Microsoft SQL Server', 'LINQ'],
       images: ['liteclerk-pos-1.png', 'liteclerk-pos-2.png'],
       category: 'Desktop App'
     },
+  ];
+
+  dailyTools = [
+    'GitHub Copilot',
+    'Claude Code',
+    'Cursor',
+    'OpenAI',
+    'Ollama',
+  ];
+
+  heroTechs = [
+    { key: 'Angular', label: 'Angular' },
+    { key: 'Ionic Framework', label: 'Ionic' },
+    { key: 'NestJS', label: 'NestJS' },
+    { key: 'FastAPI', label: 'FastAPI' },
+    { key: '.NET Framework', label: '.NET Framework' },
+    { key: 'MongoDB', label: 'MongoDB' },
+    { key: 'MySQL', label: 'MySQL' },
+    { key: 'Microsoft SQL Server', label: 'SQL Server' },
+    { key: 'Docker', label: 'Docker' },
+    { key: 'Google Play Console', label: 'Google Play' },
+    { key: 'App Store Connect', label: 'App Store Connect' },
+    { key: 'OpenAI', label: 'OpenAI' },
+    { key: 'Ollama', label: 'Ollama' },
+    { key: 'GitHub Copilot', label: 'GitHub Copilot' },
+    { key: 'Claude Code', label: 'Claude' },
+    { key: 'Cursor', label: 'Cursor', invert: true },
   ];
 
   // Computed signal to get unique categories with custom sort order
@@ -144,33 +183,33 @@ export class App {
   experiences = [
     {
       company: 'Blockspace Corporation',
-      position: 'Senior Software Engineer / Co-Founder',
+      position: 'Senior Software Engineer',
       period: 'Dec 2025 - Present',
       location: 'Mandaue, Central Visayas, Philippines · On-site',
       type: 'Full-time',
-      description: `Led a team of developers in maintaining, improving, and enhancing Xode Blockchain and Xterium projects. Planned and assigned development tasks, implemented system updates, and improved platform stability and performance. Performed code reviews to ensure quality, resolved technical issues, and guided team members in delivering client-ready solutions. Improved system workflows, optimized processes, and enhanced platform functionality to meet business requirements and user needs.`,
+      description: `Enhanced and expanded Xterium as a secure multi-platform blockchain wallet across mobile, web, and browser, strengthening usability, asset management, and reliable Web3 interactions. Contributed to Xode Blockchain as a senior engineer, implementing secure and scalable Web3 capabilities that support decentralized application development. Developed Miming CAT, a cross-chain token bridge that enables secure and seamless transfer of digital assets across multiple blockchain networks, expanding interoperability within the ecosystem. Building Polaris, a CRM platform for casino operations designed to streamline business workflows, centralize operational data, and improve visibility across day-to-day processes.`,
       current: true,
       logo: '/images/experiences/blockspace.png'
     },
     {
-      company: '4NEXGEN',
-      position: 'Senior Software Engineering Manager',
-      period: 'Aug 2024 - Nov 2025 · 1 yr 4 mos',
-      location: 'Mandaue, Central Visayas, Philippines · On-site',
-      type: 'Full-time',
-      description: `Managed a team of developers to initiate and develop Xterium, a blockchain wallet platform. Planned project tasks, monitored progress, and ensured timely delivery of functional mobile, web, and browser applications. Maintained and improved Xode Blockchain during the development of new projects. Collaborated with team members to implement features, fix issues, and maintain high-quality standards throughout the development lifecycle.`,
+      company: 'Independent Gig',
+      position: 'Software Engineer',
+      period: 'Contract / Gig',
+      location: 'Remote',
+      type: 'Gig',
+      description: `Delivered Upwisy, an AI learning platform built as an independent gig with no client company on the delivery side. Integrated OpenAI endpoints, designed agentic workflow patterns, and applied RAG techniques to support AI-assisted course creation, content generation, and personalized learning experiences. Owned end-to-end feature development across backend services, data flows, and application delivery with Docker and GitHub CI/CD DevOps.`,
       current: false,
-      logo: '/images/experiences/4nexgen.png'
+      logo: '/images/projects/upwisy-1.png'
     },
     {
-      company: 'Blockspace Corporation',
+      company: '4NEXGEN',
       position: 'Senior Software Engineer',
-      period: 'Sep 2023 - Jul 2024 · 11 mos',
-      location: 'Mandaue, Central Visayas, Philippines · Hybrid',
+      period: 'Sep 2023 - Nov 2025 · 2 yrs 3 mos',
+      location: 'Mandaue, Central Visayas, Philippines · Hybrid / On-site',
       type: 'Full-time',
-      description: `Led the development of JINA, an AI-driven virtual assistant platform, creating advanced chatbot solutions and business automation tools. Participated as a developer in the initial version of Xode Blockchain, implementing secure and scalable Web3 functionalities. Planned and implemented new features, optimized system performance, and tested software to ensure smooth operation for end users.`,
+      description: `Developed JINA-AI, an AI-driven virtual assistant platform that delivers intelligent chatbot solutions and business automation for end users and organizations. Designed and implemented core product features, optimized system performance, and validated quality to ensure stable, production-ready releases. Built Xterium, a secure blockchain wallet spanning mobile, web, and browser applications, establishing the foundation for multi-platform digital asset management across supported networks. Owned end-to-end feature development, from implementation and performance improvements to release readiness, while coordinating project tasks and delivery timelines across platforms.`,
       current: false,
-      logo: '/images/experiences/blockspace.png'
+      logo: '/images/experiences/4nexgen.png'
     },
     {
       company: 'HUMEDIT Co., Ltd',
@@ -178,7 +217,7 @@ export class App {
       period: 'Feb 2023 - Aug 2023 · 7 mos',
       location: 'Chiyoda, Tokyo, Japan · On-site',
       type: 'Full-time',
-      description: `Maintained and supported multiple projects including NIPT, dermatology reservation systems, and invoicing platforms. Worked with Japanese and Philippine teams to gather requirements, resolve technical challenges, and implement system improvements. Developed enhancements to improve workflows, performed debugging, and ensured projects were delivered accurately and on time.`,
+      description: `Transitioned to an on-site role in Tokyo at HUMEDIT, the Japan-based counterpart of Human Incubator. Worked as a Software Engineer and IT Business Analyst on healthcare platforms including NIPT, dermatology reservation systems, and invoicing solutions. Collaborated with Japanese and Philippine teams to gather requirements, clarify business needs, and translate them into technical improvements. Delivered feature enhancements, resolved production issues, and strengthened clinic and operational workflows to meet quality and delivery expectations.`,
       current: false,
       logo: '/images/experiences/humedit.png'
     },
@@ -188,7 +227,7 @@ export class App {
       period: 'Jun 2021 - Jan 2023 · 1 yr 8 mos',
       location: 'Cebu, Central Visayas, Philippines',
       type: 'Full-time',
-      description: `Led the development of a dermatology reservation app ("Beauty System") for patients to book appointments, track treatments, manage billing, and monitor staff calendars. Designed and implemented an invoicing application for patient management and financial tracking. Assigned development tasks, ensured code quality, and delivered projects that improved operational efficiency, patient management, and user satisfaction.`,
+      description: `Developed the Beauty System, a dermatology reservation platform enabling patients to book appointments, track treatments, manage billing, and monitor staff calendars. Designed and implemented an invoicing application for patient management and financial tracking across clinic operations. Coordinated engineering delivery, upheld code quality, and shipped solutions that improved operational efficiency, patient management, and user satisfaction within the company’s healthcare product ecosystem.`,
       current: false,
       logo: '/images/experiences/hii.png'
     },
@@ -198,7 +237,7 @@ export class App {
       period: 'Jan 2019 - Jun 2021 · 2 yrs 6 mos',
       location: 'Cebu City, Philippines',
       type: 'Full-time',
-      description: `Developed Liteclerk Cloud Accounting System and Liteclerk POS, delivering scalable cloud-based accounting and point-of-sale solutions for businesses. Implemented new features, improved reporting and financial management, and maintained system reliability. Worked with team members to integrate functionalities, resolve issues, and provide client support, enhancing overall system performance and usability.`,
+      description: `Enhanced Liteclerk Accounting Software into a more capable cloud-based SaaS platform for trading businesses, improving reporting, financial management, inventory workflows, and overall system reliability. Developed a new version of Liteclerk POS with real-time inventory tracking, sales and collection summaries, and operational reporting to support day-to-day business control. Also customized systems for clients, including Vaccine Tracker for vaccination eligibility monitoring and notifications, and IntelliStream for streaming subscription budgeting and optimization. Collaborated with teammates to integrate features, resolve technical issues, and deliver client-ready improvements across these products.`,
       current: false,
       logo: '/images/experiences/liteclerk.png'
     },
@@ -208,7 +247,7 @@ export class App {
       period: 'Apr 2016 - Jan 2019 · 2 yrs 10 mos',
       location: 'Cebu City, Philippines',
       type: 'Full-time',
-      description: `Built and maintained the Innosoft website and CRM system to manage leads, deliveries, and client support. Developed features to log sales activities, track client concerns, and monitor account executive performance. Streamlined workflows and automated processes to improve efficiency and client satisfaction, ensuring reliable operations for the organization.`,
+      description: `Began as an intern and was later absorbed into a full-time Software Developer role. Developed the Innosoft website and CRM platform to manage leads, deliveries, and client support, with features for sales activity logging, issue tracking, and account executive performance monitoring. Designed and developed Easyfis Accounting Software, which later evolved into Liteclerk Accounting Software and formed the product foundation of Liteclerk Corporation.`,
       current: false,
       logo: '/images/experiences/innosoft.png'
     }
@@ -294,33 +333,56 @@ export class App {
     link.click();
   }
 
+  isDarkTechIcon(tech: string): boolean {
+    return tech === 'Cursor';
+  }
+
   getTechIcon(tech: string): string {
     const iconMap: Record<string, string> = {
-      'Rust': '<img src="/images/techstacks/rust.png" />',
-      'Polkadot': '<img src="/images/techstacks/polkadot.png" />',
-      'TypeScript': '<img src="/images/techstacks/typescript.png" />',
-      'JavaScript': '<img src="/images/techstacks/javascript.png" />',
-      'Angular': '<img src="/images/techstacks/angular.png" />',
-      'NestJS': '<img src="/images/techstacks/nestjs.svg" />',
-      'Ollama': '<img src="/images/techstacks/ollama.png" />',
-      'Docker': '<img src="/images/techstacks/docker.png" />',
-      'Ionic Framework': '<img src="/images/techstacks/ionic.png" />',
-      'Android': '<img src="/images/techstacks/android.webp" />',
-      'iOS': '<img src="/images/techstacks/ios.png" />',
-      'FastAPI': '<img src="/images/techstacks/fastapi.svg" />',
-      'Python': '<img src="/images/techstacks/python.png" />',
-      'Substrate': '<img src="/images/techstacks/substrate.png" />',
-      'Laravel': '<img src="/images/techstacks/laravel.png" />',
-      'MongoDB': '<img src="/images/techstacks/mongodb.png" />',
-      'MySQL': '<img src="/images/techstacks/mysql.png" />',
-      'PHP': '<img src="/images/techstacks/php.png" />',
-      'ASP.NET': '<img src="/images/techstacks/aspnet.webp" />',
-      '.NET Framework': '<img src="/images/techstacks/dotnet.png" />',
-      'C#': '<img src="/images/techstacks/csharp.png" />',
-      'Microsoft SQL Server': '<img src="/images/techstacks/mssql.png" />',
-      'OpenAI': '<img src="/images/techstacks/openai.png" />',
+      'Rust': '<img src="/images/techstacks/rust.png" alt="Rust" />',
+      'Polkadot': '<img src="/images/techstacks/polkadot.png" alt="Polkadot" />',
+      'PolkadotJS': '<img src="/images/techstacks/polkadot.png" alt="PolkadotJS" />',
+      'Polkadot XCM': '<img src="/images/techstacks/polkadot.png" alt="Polkadot XCM" />',
+      'TypeScript': '<img src="/images/techstacks/typescript.png" alt="TypeScript" />',
+      'JavaScript': '<img src="/images/techstacks/javascript.png" alt="JavaScript" />',
+      'Angular': '<img src="/images/techstacks/angular.png" alt="Angular" />',
+      'Vue': '<img src="/images/techstacks/javascript.png" alt="Vue" />',
+      'NestJS': '<img src="/images/techstacks/nestjs.svg" alt="NestJS" />',
+      'Ollama': '<img src="/images/techstacks/ollama.png" alt="Ollama" />',
+      'LM Studio': '<img src="/images/techstacks/ollama.png" alt="LM Studio" />',
+      'Docker': '<img src="/images/techstacks/docker.png" alt="Docker" />',
+      'Ionic Framework': '<img src="/images/techstacks/ionic.png" alt="Ionic Framework" />',
+      'Android': '<img src="/images/techstacks/android.webp" alt="Android" />',
+      'iOS': '<img src="/images/techstacks/ios.png" alt="iOS" />',
+      'Google Play Console': '<img src="/images/techstacks/google-play.webp" alt="Google Play Console" />',
+      'App Store Connect': '<img src="/images/techstacks/appstore-connect.webp" alt="App Store Connect" />',
+      'Chrome Extension': '<img src="/images/techstacks/javascript.png" alt="Chrome Extension" />',
+      'FastAPI': '<img src="/images/techstacks/fastapi.svg" alt="FastAPI" />',
+      'Python': '<img src="/images/techstacks/python.png" alt="Python" />',
+      'Substrate': '<img src="/images/techstacks/substrate.png" alt="Substrate" />',
+      'Substrate (Polkadot SDK)': '<img src="/images/techstacks/substrate.png" alt="Substrate" />',
+      'Laravel': '<img src="/images/techstacks/laravel.png" alt="Laravel" />',
+      'MongoDB': '<img src="/images/techstacks/mongodb.png" alt="MongoDB" />',
+      'MySQL': '<img src="/images/techstacks/mysql.png" alt="MySQL" />',
+      'PHP': '<img src="/images/techstacks/php.png" alt="PHP" />',
+      'ASP.NET': '<img src="/images/techstacks/aspnet.webp" alt="ASP.NET" />',
+      'ASP.NET MVC 5': '<img src="/images/techstacks/aspnet.webp" alt="ASP.NET MVC 5" />',
+      '.NET Framework': '<img src="/images/techstacks/dotnet.png" alt=".NET Framework" />',
+      'C#': '<img src="/images/techstacks/csharp.png" alt="C#" />',
+      'WinForms': '<img src="/images/techstacks/dotnet.png" alt="WinForms" />',
+      'LINQ': '<img src="/images/techstacks/csharp.png" alt="LINQ" />',
+      'Microsoft SQL Server': '<img src="/images/techstacks/mssql.png" alt="Microsoft SQL Server" />',
+      'OpenAI': '<img src="/images/techstacks/openai.png" alt="OpenAI" />',
+      'Qdrant': '<img src="/images/techstacks/qdrant.png" alt="Qdrant" />',
+      'ChromaDB': '<img src="/images/techstacks/chromadb.webp" alt="ChromaDB" />',
+      'AWS': '<img src="/images/techstacks/docker.png" alt="AWS" />',
+      'GitHub CI/CD DevOps': '<img src="/images/techstacks/github.svg" alt="GitHub CI/CD DevOps" />',
+      'Proxmox': '<img src="/images/techstacks/docker.png" alt="Proxmox" />',
+      'GitHub Copilot': '<img src="/images/techstacks/github.svg" alt="GitHub Copilot" />',
+      'Claude Code': '<img src="/images/techstacks/claude.png" alt="Claude Code" />',
+      'Cursor': '<img src="/images/techstacks/cursor.png" alt="Cursor" />',
     };
-    return iconMap[tech] || '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18.5c-4 0-7.5-3.5-7.5-7.5S8 5.5 12 5.5s7.5 3.5 7.5 7.5-3.5 7.5-7.5 7.5z"/></svg>';
+    return iconMap[tech] || '<svg class="w-full h-full" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18.5c-4 0-7.5-3.5-7.5-7.5S8 5.5 12 5.5s7.5 3.5 7.5 7.5-3.5 7.5-7.5 7.5z"/></svg>';
   }
 }
 
