@@ -42,6 +42,18 @@ export class App {
 
   projects = [
     {
+      id: 'polaris',
+      title: 'Polaris - Casino Junket CRM',
+      summary: 'A Web2 CRM for casino junket operations, covering cage management, games, commissions, accounts, and live operational dashboards.',
+      description: 'Polaris is a casino junket CRM built for day-to-day operations management. It centralizes accounts, cage management, game tracking, and commission workflows in one platform. The operations dashboard provides live visibility into cash position, chip inventory, buy-ins, and active games, with breakdowns for guest, staff, and company deposits plus rolling and inventory analytics to support faster, clearer decision-making on the floor.',
+      role: 'Senior Software Engineer',
+      engagement: 'Company',
+      company: 'Blockspace Corporation',
+      technologies: ['Angular', 'TypeScript', 'NestJS', 'MongoDB', 'Docker', 'GitHub CI/CD DevOps'],
+      images: ['polaris-2.png', 'polaris-3.png', 'polaris-4.png', 'polaris-5.png', 'polaris-6.png', 'polaris-7.png', 'polaris-1.png'],
+      category: 'Web2'
+    },
+    {
       id: 'upwisy',
       title: 'Upwisy - AI Learning Platform',
       summary: 'An AI learning platform for creating and delivering courses, with OpenAI integrations, agentic workflows, and RAG-powered content experiences.',
