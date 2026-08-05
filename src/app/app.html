@@ -688,7 +688,11 @@
             </div>
 
             <!-- Description -->
-            <p class="text-slate-300 leading-relaxed text-base">{{ exp.description }}</p>
+            <div class="space-y-3 text-slate-300 leading-relaxed text-base">
+              @for (paragraph of descriptionParagraphs(exp.description); track $index) {
+              <p>{{ paragraph }}</p>
+              }
+            </div>
 
             <!-- Decorative linear line at bottom -->
             <div

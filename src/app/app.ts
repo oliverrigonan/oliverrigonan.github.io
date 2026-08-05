@@ -282,7 +282,16 @@ export class App {
       period: 'Dec 2025 - Present',
       location: 'Mandaue, Central Visayas, Philippines · On-site',
       type: 'Full-time',
-      description: `Enhanced and expanded Xterium as a secure multi-platform blockchain wallet across mobile, web, and browser, strengthening usability, asset management, and reliable Web3 interactions. Contributed to Xode Blockchain as a senior engineer, implementing secure and scalable Web3 capabilities that support decentralized application development. Developed Miming CAT, a cross-chain token bridge that enables secure and seamless transfer of digital assets across multiple blockchain networks, expanding interoperability within the ecosystem. Building Polaris, a CRM platform for casino operations designed to streamline business workflows, centralize operational data, and improve visibility across day-to-day processes.`,
+      description: `
+      Responsible for designing, developing, and maintaining scalable software solutions across web, mobile, and blockchain applications. Work across the full software development lifecycle, including system design, application development, API development, database design, integrations, testing, deployment, and production support.
+
+      Lead the continued development of Xterium, a multi-platform blockchain wallet supporting secure digital asset management and Web3 interactions. Contribute to Xode Blockchain by implementing secure and scalable blockchain capabilities that support decentralized applications and ecosystem services.
+
+      Develop Miming CAT, a cross-chain token bridge designed to enable secure and reliable digital asset transfers across multiple blockchain networks, with a focus on interoperability and transaction reliability.
+
+      Also lead the development of Polaris, a CRM and business management platform for casino operations. The platform is designed to centralize operational data, streamline business workflows, and provide better visibility into day-to-day processes.
+
+      Collaborate with technical and business teams to translate requirements into scalable and maintainable solutions while contributing to system reliability, code quality, and continuous product improvement.`,
       current: true,
       logo: '/images/experiences/blockspace.png'
     },
@@ -292,7 +301,14 @@ export class App {
       period: 'Sep 2023 - Nov 2025 · 2 yrs 3 mos',
       location: 'Mandaue, Central Visayas, Philippines · Hybrid / On-site',
       type: 'Full-time',
-      description: `Developed JINA-AI, an AI-driven virtual assistant platform that delivers intelligent chatbot solutions and business automation for end users and organizations. Designed and implemented core product features, optimized system performance, and validated quality to ensure stable, production-ready releases. Built Xterium, a secure blockchain wallet spanning mobile, web, and browser applications, establishing the foundation for multi-platform digital asset management across supported networks. Owned end-to-end feature development, from implementation and performance improvements to release readiness, while coordinating project tasks and delivery timelines across platforms.`,
+      description: `
+      Worked on the design and development of full-stack applications across AI, blockchain, and business systems. Responsible for implementing features, developing APIs and backend services, integrating databases and third-party services, troubleshooting technical issues, and supporting applications throughout their development lifecycle.
+
+      Developed JINA-AI, an AI-powered virtual assistant platform providing intelligent chatbot capabilities and AI-driven business solutions. Worked on core product functionality, system improvements, performance optimization, and production readiness.
+
+      Built and enhanced Xterium, a secure multi-platform blockchain wallet for mobile, web, and browser applications. Contributed to the development of its core functionality and supported its evolution into a multi-platform digital asset management solution.
+
+      Worked closely with developers, stakeholders, and project teams to translate business requirements into technical solutions. Also contributed to technical planning, feature delivery, system reliability, code quality, and production support across multiple projects.`,
       current: false,
       logo: '/images/experiences/4nexgen.png'
     },
@@ -302,7 +318,12 @@ export class App {
       period: 'Feb 2023 - Aug 2023 · 7 mos',
       location: 'Chiyoda, Tokyo, Japan · On-site',
       type: 'Full-time',
-      description: `Transitioned to an on-site role in Tokyo at HUMEDIT, the Japan-based counterpart of Human Incubator. Worked as a Software Engineer and IT Business Analyst on healthcare platforms including NIPT, dermatology reservation systems, and invoicing solutions. Collaborated with Japanese and Philippine teams to gather requirements, clarify business needs, and translate them into technical improvements. Delivered feature enhancements, resolved production issues, and strengthened clinic and operational workflows to meet quality and delivery expectations.`,
+      description: `
+      Worked as a Software Engineer and IT Business Analyst supporting healthcare and clinic management platforms in Japan. Combined software development responsibilities with business analysis to understand operational requirements and translate them into practical technical solutions.
+
+      Worked on healthcare platforms including NIPT, dermatology reservation systems, and invoicing applications. Developed new features, improved existing workflows, resolved production issues, and supported the continuous enhancement of business applications.
+
+      Collaborated closely with Japanese and Philippine teams to gather and clarify requirements, discuss technical solutions, coordinate development activities, and ensure that implemented features aligned with business and operational needs.`,
       current: false,
       logo: '/images/experiences/humedit.png'
     },
@@ -312,7 +333,14 @@ export class App {
       period: 'Jun 2021 - Jan 2023 · 1 yr 8 mos',
       location: 'Cebu, Central Visayas, Philippines',
       type: 'Full-time',
-      description: `Developed the Beauty System, a dermatology reservation platform enabling patients to book appointments, track treatments, manage billing, and monitor staff calendars. Designed and implemented an invoicing application for patient management and financial tracking across clinic operations. Coordinated engineering delivery, upheld code quality, and shipped solutions that improved operational efficiency, patient management, and user satisfaction within the company’s healthcare product ecosystem.`,
+      description: `
+      Led software engineering activities for healthcare and clinic management applications, taking responsibility for technical implementation, development coordination, code quality, and delivery.
+
+      Designed and developed the Beauty System, a dermatology reservation platform supporting appointment scheduling, treatment management, billing, and staff calendar management. Also designed and implemented an invoicing and patient management application supporting financial and operational workflows.
+
+      Worked closely with business stakeholders and development teams to analyze requirements, design solutions, coordinate development activities, and resolve technical and production issues.
+
+      Focused on delivering reliable and maintainable software while improving application performance, usability, and overall operational efficiency.`,
       current: false,
       logo: '/images/experiences/hii.png'
     },
@@ -322,7 +350,16 @@ export class App {
       period: 'Jan 2019 - Jun 2021 · 2 yrs 6 mos',
       location: 'Cebu City, Philippines',
       type: 'Full-time',
-      description: `Enhanced Liteclerk Accounting Software into a more capable cloud-based SaaS platform for trading businesses, improving reporting, financial management, inventory workflows, and overall system reliability. Developed a new version of Liteclerk POS with real-time inventory tracking, sales and collection summaries, and operational reporting to support day-to-day business control. Also customized systems for clients, including Vaccine Tracker for vaccination eligibility monitoring and notifications, and IntelliStream for streaming subscription budgeting and optimization. Collaborated with teammates to integrate features, resolve technical issues, and deliver client-ready improvements across these products.`,
+      description: `
+      Worked on the development and enhancement of business management, accounting, and point-of-sale systems for trading and commercial organizations.
+
+      Contributed to the evolution of Liteclerk Accounting Software into a cloud-based SaaS platform, improving financial management, reporting, inventory management, and day-to-day business workflows.
+
+      Developed a new version of Liteclerk POS with real-time inventory tracking, sales and collection monitoring, and operational reporting to help businesses manage their daily operations more effectively.
+
+      Also developed and customized software solutions based on client requirements, including Vaccine Tracker for vaccination eligibility monitoring and notifications and IntelliStream for streaming subscription budgeting and management.
+
+      Worked across software development, database design, system integration, troubleshooting, deployment, and production support while collaborating with teams to deliver reliable and maintainable solutions.`,
       current: false,
       logo: '/images/experiences/liteclerk.png'
     },
@@ -332,7 +369,16 @@ export class App {
       period: 'Apr 2016 - Jan 2019 · 2 yrs 10 mos',
       location: 'Cebu City, Philippines',
       type: 'Full-time',
-      description: `Began as an intern and was later absorbed into a full-time Software Developer role. Developed the Innosoft website and CRM platform to manage leads, deliveries, and client support, with features for sales activity logging, issue tracking, and account executive performance monitoring. Designed and developed Easyfis Accounting Software, which later evolved into Liteclerk Accounting Software and formed the product foundation of Liteclerk Corporation.`,
+      description: `
+      Started as a software development intern and transitioned into a full-time Software Developer role, gaining experience in developing web-based business applications and enterprise software solutions.
+
+      Designed and developed the Innosoft corporate website and CRM platform for managing leads, deliveries, customer support, sales activities, issue tracking, and account executive performance.
+
+      Designed and developed Easyfis Accounting Software, which later evolved into Liteclerk Accounting Software and became the foundation of Liteclerk Corporation's accounting product.
+
+      Worked across the software development lifecycle, including application design, full-stack development, database development, testing, troubleshooting, deployment, and system maintenance.
+
+      Collaborated with business teams and clients to understand requirements and deliver software solutions that addressed operational and business needs.`,
       current: false,
       logo: '/images/experiences/innosoft.png'
     }
@@ -373,6 +419,13 @@ export class App {
     { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/noaholiverrigonan', icon: 'linkedin' },
     { platform: 'Email', url: 'mailto:oliverrigonan@gmail.com', icon: 'email' }
   ];
+
+  descriptionParagraphs(description: string): string[] {
+    return description
+      .split(/\n\s*\n/)
+      .map(paragraph => paragraph.trim())
+      .filter(paragraph => paragraph.length > 0);
+  }
 
   toggleMobileMenu(): void {
     this.mobileMenuOpen.update(open => !open);
