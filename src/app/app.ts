@@ -279,38 +279,17 @@ export class App {
     {
       company: 'Blockspace Corporation',
       position: 'Senior Software Engineer',
-      period: 'Dec 2025 - Present',
+      period: 'Sep 2023 - Present',
       location: 'Mandaue, Central Visayas, Philippines · On-site',
       type: 'Full-time',
       description: `
-      Responsible for designing, developing, and maintaining scalable software solutions across web, mobile, and blockchain applications. Work across the full software development lifecycle, including system design, application development, API development, database design, integrations, testing, deployment, and production support.
+      Designed, developed, and delivered scalable software solutions across AI, blockchain, web, mobile, and business applications. Worked across the full software development lifecycle, including system architecture, application and API development, database design, third-party integrations, testing, deployment, troubleshooting, and production support. Collaborated with technical and business teams to translate requirements into reliable, scalable, and maintainable solutions.
 
-      Lead the continued development of Xterium, a multi-platform blockchain wallet supporting secure digital asset management and Web3 interactions. Contribute to Xode Blockchain by implementing secure and scalable blockchain capabilities that support decentralized applications and ecosystem services.
+      Led the development of Xterium, a secure multi-platform blockchain wallet supporting mobile, web, and browser applications. Contributed to Xode Blockchain by implementing secure and scalable blockchain capabilities that supported decentralized applications, digital asset management, and ecosystem services.
 
-      Develop Miming CAT, a cross-chain token bridge designed to enable secure and reliable digital asset transfers across multiple blockchain networks, with a focus on interoperability and transaction reliability.
-
-      Also lead the development of Polaris, a CRM and business management platform for casino operations. The platform is designed to centralize operational data, streamline business workflows, and provide better visibility into day-to-day processes.
-
-      Collaborate with technical and business teams to translate requirements into scalable and maintainable solutions while contributing to system reliability, code quality, and continuous product improvement.`,
+      Developed JINA-AI, an AI-powered virtual assistant platform providing intelligent chatbot capabilities and AI-driven business solutions, with a focus on core functionality, system improvements, performance optimization, integrations, and production readiness. Also led the development of Polaris, a CRM and business management platform designed for casino operations, centralizing operational data, streamlining business workflows, and improving visibility across day-to-day business processes. Contributed to technical planning, feature delivery, system reliability, code quality, and product improvement across these solutions.`,
       current: true,
       logo: '/images/experiences/blockspace.png'
-    },
-    {
-      company: '4NEXGEN',
-      position: 'Senior Software Engineer',
-      period: 'Sep 2023 - Nov 2025 · 2 yrs 3 mos',
-      location: 'Mandaue, Central Visayas, Philippines · Hybrid / On-site',
-      type: 'Full-time',
-      description: `
-      Worked on the design and development of full-stack applications across AI, blockchain, and business systems. Responsible for implementing features, developing APIs and backend services, integrating databases and third-party services, troubleshooting technical issues, and supporting applications throughout their development lifecycle.
-
-      Developed JINA-AI, an AI-powered virtual assistant platform providing intelligent chatbot capabilities and AI-driven business solutions. Worked on core product functionality, system improvements, performance optimization, and production readiness.
-
-      Built and enhanced Xterium, a secure multi-platform blockchain wallet for mobile, web, and browser applications. Contributed to the development of its core functionality and supported its evolution into a multi-platform digital asset management solution.
-
-      Worked closely with developers, stakeholders, and project teams to translate business requirements into technical solutions. Also contributed to technical planning, feature delivery, system reliability, code quality, and production support across multiple projects.`,
-      current: false,
-      logo: '/images/experiences/4nexgen.png'
     },
     {
       company: 'HUMEDIT Co., Ltd',
